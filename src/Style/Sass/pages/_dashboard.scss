@@ -1,0 +1,17 @@
+@use '../abstracts';
+
+main.dashboard{
+    display: flex;
+    align-items: center;
+    .dashboard-content{
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 100px);
+        height: calc(100vh - 100px);;
+        align-items: center;
+        justify-content: center;
+        .dashboard-name{
+            color: abstracts.$color-primary;
+        }
+    }
+}

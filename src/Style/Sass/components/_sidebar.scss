@@ -1,0 +1,26 @@
+@use '../abstracts';
+
+.sidebar-container{
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    height: calc(100vh - 100px);
+    background-color: abstracts.$color-secondary;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    a{
+        cursor: pointer;
+      &:hover{
+        transform: scale(1.05);
+      }
+
+      
+    }
+    .copyright{
+        color: abstracts.$color-tertiary;
+        transform: rotate(-90deg);
+        height: auto;
+        width: 400px;
+    }
+}
