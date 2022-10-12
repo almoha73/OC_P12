@@ -8,8 +8,9 @@ const FetchData = (userId) => {
     const userPerformance = USER_PERFORMANCE.find(elt => parseInt(userId) === elt.userId)
     const userAverageSessions = USER_AVERAGE_SESSIONS.find(elt => parseInt(userId) === elt.userId)
     const userActivity = USER_ACTIVITY.find(elt => parseInt(userId) === elt.userId)
-    console.log(userMainData, userPerformance, userAverageSessions, userActivity)
-    return {userMainData, userPerformance, userAverageSessions, userActivity}
+    const errorData = USER_MAIN_DATA.find(elt => elt.id === undefined)
+    console.log(userMainData, userPerformance, userAverageSessions, userActivity, errorData)
+    return {userMainData, userPerformance, userAverageSessions, userActivity, errorData}
 }
 
 export default FetchData;

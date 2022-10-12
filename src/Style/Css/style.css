@@ -90,4 +90,18 @@ main.dashboard .dashboard-content .dashboard-name {
   color: #FF0000;
 }
 
+main.reglage-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
+main.community-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
 /*# sourceMappingURL=style.css.map */

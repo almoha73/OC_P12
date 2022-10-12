@@ -1,13 +1,15 @@
-import React from 'react';
-import Navbar from '../Components/Navbar';
+import React from "react";
+import Navbar from "../Components/Navbar";
 
 const Reglage = () => {
-    return (
-        <div>
-            <Navbar />
-            <h1>REGLAGES</h1>
-        </div>
-    );
+  return (
+    <div>
+      <Navbar />
+      <main className="reglage-container">
+        <h1 className="reglage-title">REGLAGES</h1>
+      </main>
+    </div>
+  );
 };
 
 export default Reglage;

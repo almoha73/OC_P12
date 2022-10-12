@@ -1,9 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.svg";
+import FetchData from "../Api/MockedApi/FetchData";
 
-const Navbar = () => {
+const Navbar = ({id}) => {
+const userMainData  = FetchData(id)
+  id = userMainData.id
+ if (String(id) === 'undefined') {
+  id = '18'
+}
   return (
+   
     <nav className="navbar-container">
       <div className="navbar">
         <div className="logo">
@@ -13,9 +20,10 @@ const Navbar = () => {
           <NavLink to="/" className={({isActive}) => (isActive ? "nav-active" : "")}end>
             <li className="navbar-item">Accueil</li>
           </NavLink>
-          <NavLink to="/user/:id" className={({isActive}) => (isActive ? "nav-active" : "")}end>
+          <NavLink to={`/user/${id}`} className={({isActive}) => (isActive ? "nav-active" : "")}end>
             <li className="navbar-item">Profil</li>
           </NavLink>
+        
           <NavLink to="/reglage" className={({isActive}) => (isActive ? "nav-active" : "")}end>
             <li className="navbar-item">Réglage</li>
           </NavLink>

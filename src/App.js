@@ -9,6 +9,7 @@ import Community from "./pages/Community";
 function App() {
   
   return (
+   
     <Routes>
       <Route path="/" element={<Home id/>}></Route>
       <Route path="/user/:id" element={<Dashboard />}></Route>
