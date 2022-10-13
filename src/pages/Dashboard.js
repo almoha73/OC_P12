@@ -4,14 +4,17 @@ import Navbar from "../Components/Navbar";
 import Sidebar from "../Components/Sidebar";
 import Error from "../pages/Error";
 import { useParams } from "react-router-dom";
+import LineChart from "../Components/LineChart";
 
 const Dashboard = () => {
   let { id } = useParams();
   
 let userId = Number(id);
 
-  const { userMainData} = FetchData(userId);
-  
+  const { userMainData, userAverageSessions} = FetchData(userId);
+  const userSession = userAverageSessions.sessions.map(elt => elt.sessionLength);
+  const userSessionDay = userAverageSessions.sessions.map(elt => elt.day);
+  console.log(userSession, userSessionDay);
 
   if (!id) return <Error />;
   if (!userMainData) return <Error />
@@ -31,6 +34,7 @@ let userId = Number(id);
                 </span>
               </h1>
               <p>Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
+              <LineChart averageSessions={userSession} sessionDay={userSessionDay}/>
             </div>
           </main>
         </div>
