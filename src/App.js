@@ -6,13 +6,14 @@ import Error from "./pages/Error";
 import Reglage from "./pages/Reglage";
 import Community from "./pages/Community";
 
+
 function App() {
   
   return (
    
     <Routes>
-      <Route path="/" element={<Home id/>}></Route>
-      <Route path="/user/:id" element={<Dashboard />}></Route>
+      <Route path="/" element={<Home />}></Route>
+      <Route path="/user/:userId" element={<Dashboard />}></Route>
       <Route path="/reglage" element={<Reglage />}></Route>
       <Route path="/community" element={<Community />}></Route>
       <Route path="*" element={<Error />}></Route>
