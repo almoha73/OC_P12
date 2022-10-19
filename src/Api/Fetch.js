@@ -1,36 +1,20 @@
-import { useState, useEffect } from "react";
+import axios from "axios";
 
-export default function Fetch(url) {
- const [data, setData] = useState(null);
- const [loading, setLoading] = useState(true);
- const [error, setError] = useState(null);
+const Fetch = async (userId) => {
+    try {
+      const res = await Promise.all([
+        axios.get(`http://localhost:3000/user/${userId}`),
+        axios.get(`http://localhost:3000/user/${userId}/activity`),
+        axios.get(`http://localhost:3000/user/${userId}/average-sessions`),
+		axios.get(`http://localhost:3000/user/${userId}/performance`)
+      ]);
+      const data = res.map((res) => res.data);
+      console.log(data.flat());
+	  return data
+    } catch {
+      throw Error("Promise failed");
+    }
+	
+  };
 
- useEffect(() => {
-	if(!url) return
-	setLoading(true);
-	const getData = async () => {
-	  try {
-		const response = await fetch(
-		  url
-		);
-		if (!response.ok) {
-		  throw new Error(
-			`This is an HTTP error: The status is ${response.status}`
-		  );
-		}
-		let actualData = await response.json();
-		setData(actualData);
-		setError(null);
-	  } catch(err) {
-		setError(err.message);
-		setData(null);
-	  } finally {
-		setLoading(false);
-	  }  
-	}
-	getData()
-  }, [url])
-
- return {data, loading, error}
-}
-  
+  export default Fetch

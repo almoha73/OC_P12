@@ -6,6 +6,7 @@ import Error from "./pages/Error";
 import Reglage from "./pages/Reglage";
 import Community from "./pages/Community";
 
+// Routes and pages links
 
 function App() {
   
