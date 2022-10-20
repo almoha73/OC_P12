@@ -8,9 +8,9 @@ export default class ManageData {
     }
 
     manageAverageSessionsData (){
-        const sessions = this.averageSessionsData.sessions
-        
-            console.log(sessions);
+        const sessions = this.averageSessionsData?.sessions     
+        const days = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
+        console.log(days);
         return sessions
         
     }

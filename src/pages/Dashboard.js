@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../Components/Navbar";
 import Sidebar from "../Components/Sidebar";
 import LineChart from "../Components/LineChart";
-import useMockApi from "../Api/useApi";
+import useApi from "../Api/useApi";
 import Loader from "./Loader";
 import Error from '../pages/Error';
 import { useParams } from "react-router-dom";
@@ -10,7 +10,7 @@ import ManageData from "../services/ManageData";
 
 const Dashboard = () => {
 	const {userId} = useParams()
-	let { mainData, activityData, averageSessionsData, performanceData, isLoading, error } = useMockApi(userId);
+	let { mainData, activityData, averageSessionsData, performanceData, isLoading, error } = useApi(userId);
 	console.log(mainData, activityData, averageSessionsData, performanceData);
 
 	const manageData = new ManageData(averageSessionsData)
