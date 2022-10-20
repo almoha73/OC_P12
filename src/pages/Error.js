@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Error = () => {
+const Error = ({status}) => {
     return (
         <div>
             <h1>ERROR</h1>
