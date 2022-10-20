@@ -2,21 +2,28 @@ import React from "react";
 import Navbar from "../Components/Navbar";
 import Sidebar from "../Components/Sidebar";
 import LineChart from "../Components/LineChart";
-import useApi from "../Api/useApi";
+import useMockApi from "../Api/useApi";
 import Loader from "./Loader";
 import Error from '../pages/Error';
 import { useParams } from "react-router-dom";
+import ManageData from "../services/ManageData";
 
 const Dashboard = () => {
 	const {userId} = useParams()
-	let { mainData, activityData, averageSessionsData, performanceData, isLoading, error } = useApi(userId);
+	let { mainData, activityData, averageSessionsData, performanceData, isLoading, error } = useMockApi(userId);
 	console.log(mainData, activityData, averageSessionsData, performanceData);
+
+	const manageData = new ManageData(averageSessionsData)
+		const dataSessions = manageData.manageAverageSessionsData()
+		console.log(dataSessions);
+	
+
     if (error) {
         return (<Error />)
     } else if (isLoading) {
         return <Loader />
     } else {
-	
+		
 		return (
 			<>
 				<Navbar />
