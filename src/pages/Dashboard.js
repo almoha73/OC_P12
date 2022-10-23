@@ -13,10 +13,14 @@ const Dashboard = () => {
 	let { mainData, activityData, averageSessionsData, performanceData, isLoading, error } = useApi(userId);
 	console.log(mainData, activityData, averageSessionsData, performanceData);
 
-	const manageData = new ManageData(averageSessionsData)
+	const manageData = new ManageData(averageSessionsData, performanceData, activityData)
 		const dataSessions = manageData.manageAverageSessionsData()
-		console.log(dataSessions);
-	
+	const managePerformance = new ManageData(averageSessionsData, performanceData, activityData)
+	const dataPerformance = managePerformance.managePerformanceData()
+		
+	const manageActivity = new ManageData(averageSessionsData, performanceData, activityData);
+	const dataActivity = manageActivity.manageActivityData()
+	console.log(dataSessions, dataPerformance, dataActivity);
 
     if (error) {
         return (<Error />)
