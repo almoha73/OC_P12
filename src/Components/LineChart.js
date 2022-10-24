@@ -3,7 +3,7 @@ import React from 'react';
 const LineChart = () => {
   return (
     <div>
-      
+      <h1>LineChart-Sessions</h1>
     </div>
   );
 };
