@@ -66,30 +66,6 @@ nav.navbar-container .navbar ul.navbar-link a.nav-active {
   width: 400px;
 }
 
-.barchart-activity {
-  height: 320px;
-  background: #fbfbfb;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
-  border-radius: 5px;
-  margin-bottom: 28px;
-}
-
-.custom-tooltip {
-  background-color: #e60000;
-  width: 39px;
-  height: 63px;
-  margin-left: 7px;
-  border: transparent;
-}
-.custom-tooltip .custom-tooltip-label {
-  width: 100%;
-  font-weight: 500;
-  font-size: 7px;
-  line-height: 31px;
-  color: #ffffff;
-  text-align: center;
-}
-
 .activityGraph {
   height: 320px;
   background: #FBFBFB;
@@ -106,13 +82,75 @@ main.home-main {
   align-items: center;
 }
 
-main.dashboard {
+.container {
   display: flex;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 75vh;
   width: 100%;
 }
-main.dashboard .dashboard-content {
+.dashboard .dashboard-content {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: auto;
+  gap: 30px;
+}
+.dashboard .dashboard-content .barchart-activity {
   width: 100%;
+  height: 100%;
+}
+.dashboard .dashboard-content .barchart-activity .barchart-activity-chart {
+  width: 100%;
+  height: auto;
+  background: #fbfbfb;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  border-radius: 5px;
+  margin-bottom: 28px;
+}
+.dashboard .dashboard-content .barchart-activity .barchart-activity-chart .recherts-responsive-container .recharts-wrapper {
+  width: 100% !important;
+}
+.dashboard .dashboard-content .barchart-activity .barchart-activity-chart .recherts-responsive-container .recharts-wrapper .recharts-surface {
+  max-width: 100%;
+}
+.dashboard .dashboard-content .charts {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+.dashboard .dashboard-content .charts:first-child {
+  width: 33%;
+  height: 300px;
+}
+.dashboard .dashboard-content .charts:first-child .recharts-wrapper {
+  width: 100% !important;
+}
+.dashboard .dashboard-content .charts:nth-child(2) {
+  width: 33%;
+}
+.dashboard .dashboard-content .charts:nth-child(2) .recharts-wrapper {
+  width: 100% !important;
+}
+
+.custom-tooltip {
+  background-color: #e60000;
+  width: 39px;
+  height: 63px;
+  margin-left: 7px;
+  border: transparent;
+}
+.custom-tooltip .custom-tooltip-label {
+  width: 100%;
+  font-weight: 500;
+  font-size: 7px;
+  line-height: 31px;
+  color: #ffffff;
+  text-align: center;
 }
 
 main.reglage-container {

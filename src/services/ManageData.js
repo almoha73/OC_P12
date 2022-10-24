@@ -7,7 +7,7 @@ export default class ManageData {
 	//Functions for creating new tables/objects where new exploitable data are added
 
 	manageAverageSessionsData() {
-		let newSessionsArray=[];
+		let newSessionsArray = [];
 		const sessions = this.averageSessionsData?.sessions;
 		const newDays = [
 			{ dayLetter: "L" },
@@ -18,35 +18,40 @@ export default class ManageData {
 			{ dayLetter: "S" },
 			{ dayLetter: "D" },
 		];
-		for(let i = 0; i < sessions?.length; i++){
-				const newSessionsAverage = Object.assign(newDays[i], sessions[i])
-				newSessionsArray.push(newSessionsAverage)
+		for (let i = 0; i < sessions?.length; i++) {
+			const newSessionsAverage = Object.assign(newDays[i], sessions[i]);
+			newSessionsArray.push(newSessionsAverage);
 		}
-		return newSessionsArray
+		return newSessionsArray;
 	}
 
-	managePerformanceData(){
-		const type = {
-			1: "Cardio",
-			2: "Energie",
-			3: "Endurance",
-			4: "Force",
-			5: "Vitesse",
-			6: "Intensité"
+	managePerformanceData() {
+		const newPerformanceArray = [];
+		const performance = this.performanceData?.data;
+		const type = [
+			{ type: "Cardio" },
+			{ type: "Energie" },
+			{ type: "Endurance" },
+			{ type: "Force" },
+			{ type: "Vitesse" },
+			{ type: "Intensité" },
+		];
+		for (let i = 0; i < performance?.length; i++) {
+			const newPerformance = Object.assign(type[i], performance[i]);
+			newPerformanceArray.push(newPerformance);
 		}
-		const performances = Object.assign({type}, this.performanceData)
-		return performances
+		return newPerformanceArray;
 	}
 
-	manageActivityData(){
-		let newActivityArray = []
+	manageActivityData() {
+		let newActivityArray = [];
 		const activity = this.activityData?.sessions;
-		
-		for(let i = 0; i < activity?.length; i++){
-			const activityObj= Object.assign(activity[i], {dayNum : i + 1})
-			newActivityArray.push(activityObj)
+
+		for (let i = 0; i < activity?.length; i++) {
+			const activityObj = Object.assign(activity[i], { dayNum: i + 1 });
+			newActivityArray.push(activityObj);
 		}
-		
-		return newActivityArray
+
+		return newActivityArray;
 	}
 }

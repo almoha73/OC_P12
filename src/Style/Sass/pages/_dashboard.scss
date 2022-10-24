@@ -1,10 +1,76 @@
-@use '../abstracts';
+@use "../abstracts";
+.container {
+	display: flex;
+}
+.dashboard {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 75vh;
+	width: 100%;
+	.dashboard-content {
+		display: flex;
+		flex-direction: column;
+		width: 70%;
+		height: auto;
+		gap: 30px;
+		.barchart-activity {
+			width: 100%;
+			height: 100%;
+			.barchart-activity-chart {
+				width: 100%;
+				height: auto;
+				background: #fbfbfb;
+				box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+				border-radius: 5px;
+				margin-bottom: 28px;
+				.recherts-responsive-container {
+					.recharts-wrapper {
+						width: 100% !important;
+						.recharts-surface {
+							max-width: 100%;
+						}
+					}
+				}
+			}
+		}
 
-main.dashboard{
-    display: flex;
-    height: 75vh;
-    width: 100%;
-    .dashboard-content{
-        width: 100%;
-    }
+		.charts {
+			display: flex;
+			flex-direction: row;
+			
+			gap: 30px;
+
+			&:first-child {
+				width: 33%;
+				height: 300px;
+				.recharts-wrapper {
+					width: 100% !important;
+				}
+			}
+			&:nth-child(2){
+				width: 33%;
+				.recharts-wrapper {
+					width: 100% !important;
+					
+				}
+			}
+		}
+	}
+}
+
+.custom-tooltip {
+	background-color: #e60000;
+	width: 39px;
+	height: 63px;
+	margin-left: 7px;
+	border: transparent;
+	.custom-tooltip-label {
+		width: 100%;
+		font-weight: 500;
+		font-size: 7px;
+		line-height: 31px;
+		color: #ffffff;
+		text-align: center;
+	}
 }
