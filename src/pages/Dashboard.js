@@ -8,7 +8,8 @@ import Error from "../pages/Error";
 import { useParams } from "react-router-dom";
 import ManageData from "../services/ManageData";
 import LineChartSessions from "../Components/LineChartSessions";
-//import RadarChart from "../Components/RadarChart";
+import RadarChartPerformance from "../Components/RadarChartPerformance";
+
 const Dashboard = () => {
 	const { userId } = useParams();
 	let {
@@ -19,27 +20,44 @@ const Dashboard = () => {
 		isLoading,
 		error,
 	} = useApi(userId);
-	
+
 	const manageActivity = new ManageData(
 		averageSessionsData,
 		performanceData,
-		activityData
+		activityData,
+		mainData
 	);
-	// const managePerformance = new ManageData(
-	// 	averageSessionsData,
-	// 	performanceData,
-	// 	activityData
-	// );
+
 	const manageAverageSessions = new ManageData(
 		averageSessionsData,
 		performanceData,
-		activityData
+		activityData,
+		mainData
+	);
+	const managePerformance = new ManageData(
+		averageSessionsData,
+		performanceData,
+		activityData,
+		mainData
 	);
 	const dataActivity = manageActivity?.manageActivityData();
-	//const dataPerformance = managePerformance?.managePerformanceData();
-	const dataAverageSessions = manageAverageSessions?.manageAverageSessionsData();
-	
-
+	const dataAverageSessions =
+		manageAverageSessions?.manageAverageSessionsData();
+	const dataPerformance = managePerformance?.managePerformanceData();
+	const manageData = new ManageData(
+		averageSessionsData,
+		performanceData,
+		activityData,
+		mainData
+	);
+	const dataMainData = manageData?.manageMainData();
+	console.log(
+		dataActivity,
+		dataAverageSessions,
+		dataPerformance,
+		mainData,
+		dataMainData
+	);
 	if (error) {
 		return <Error />;
 	} else if (isLoading) {
@@ -53,7 +71,7 @@ const Dashboard = () => {
 					<div className="dashboard">
 						<div className="dashboard-title">
 							<h1>
-								Bonjour
+								Bonjour &nbsp;
 								<span className="dashboard-name">
 									{mainData.userInfos.firstName}
 								</span>
@@ -66,12 +84,10 @@ const Dashboard = () => {
 							</div>
 							<div className="charts">
 								<LineChartSessions dataSessions={dataAverageSessions} />
-								{/* <RadarChart dataPerformance={dataPerformance}/> */}
-							
+								<RadarChartPerformance dataPerformance={dataPerformance} />
 							</div>
 							<div className="health-infos"></div>
 						</div>
-						
 					</div>
 				</main>
 			</>

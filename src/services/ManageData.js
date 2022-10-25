@@ -1,8 +1,9 @@
 export default class ManageData {
-	constructor(averageSessionsData, performanceData, activityData) {
+	constructor(averageSessionsData, performanceData, activityData, mainData) {
 		this.averageSessionsData = averageSessionsData;
 		this.performanceData = performanceData;
 		this.activityData = activityData;
+		this.mainData = mainData;
 	}
 	//Functions for creating new tables/objects where new exploitable data are added
 
@@ -27,6 +28,7 @@ export default class ManageData {
 
 	managePerformanceData() {
 		const newPerformanceArray = [];
+		let newArray;
 		const performance = this.performanceData?.data;
 		const type = [
 			{ type: "Cardio" },
@@ -38,9 +40,11 @@ export default class ManageData {
 		];
 		for (let i = 0; i < performance?.length; i++) {
 			const newPerformance = Object.assign(type[i], performance[i]);
-			newPerformanceArray.push(newPerformance);
+			newPerformanceArray?.push(newPerformance);
+			 newArray = newPerformanceArray?.slice().reverse()
+			 
 		}
-		return newPerformanceArray;
+		return newArray;
 	}
 
 	manageActivityData() {
@@ -54,4 +58,12 @@ export default class ManageData {
 
 		return newActivityArray;
 	}
+
+	manageMainData(){
+		const score = this.mainData?.score * 100
+		console.log(score);
+		const mainDataObj = Object.assign({scorePurcent: `${score} %`}, this.mainData);
+		return mainDataObj
+	}
 }
+ 

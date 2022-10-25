@@ -47,7 +47,7 @@ nav.navbar-container .navbar ul.navbar-link a.nav-active {
   display: flex;
   flex-direction: column;
   width: 100px;
-  height: calc(100vh - 100px);
+  height: 1124px;
   background-color: #020203;
   align-items: center;
   justify-content: center;
@@ -90,8 +90,23 @@ main.home-main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 75vh;
+  height: 90vh;
   width: 100%;
+}
+.dashboard .dashboard-title {
+  width: 70%;
+  margin-top: 68px;
+}
+.dashboard .dashboard-title h1 {
+  font-size: 48px;
+  align-items: flex-start;
+  margin-bottom: 41px;
+}
+.dashboard .dashboard-title h1 .dashboard-name {
+  color: #FF0000;
+}
+.dashboard .dashboard-title p {
+  font-size: 18px;
 }
 .dashboard .dashboard-content {
   display: flex;
@@ -99,6 +114,7 @@ main.home-main {
   width: 70%;
   height: auto;
   gap: 30px;
+  margin-top: 77px;
 }
 .dashboard .dashboard-content .barchart-activity {
   width: 100%;
@@ -122,19 +138,6 @@ main.home-main {
   display: flex;
   flex-direction: row;
   gap: 30px;
-}
-.dashboard .dashboard-content .charts:first-child {
-  width: 33%;
-  height: 300px;
-}
-.dashboard .dashboard-content .charts:first-child .recharts-wrapper {
-  width: 100% !important;
-}
-.dashboard .dashboard-content .charts:nth-child(2) {
-  width: 33%;
-}
-.dashboard .dashboard-content .charts:nth-child(2) .recharts-wrapper {
-  width: 100% !important;
 }
 
 .custom-tooltip {
