@@ -60,10 +60,13 @@ export default class ManageData {
 	}
 
 	manageMainData(){
-		const score = this.mainData?.score * 100
+		let newManageDataArray = []
+		const score = (this.mainData?.todayScore || this.mainData?.score) * 100
 		console.log(score);
-		const mainDataObj = Object.assign({scorePurcent: `${score} %`}, this.mainData);
-		return mainDataObj
+		const mainDataObj = Object.assign({scorePourcent: score}, this.mainData);
+		
+		newManageDataArray.push(mainDataObj)
+		return newManageDataArray
 	}
 }
  

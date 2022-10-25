@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import ManageData from "../services/ManageData";
 import LineChartSessions from "../Components/LineChartSessions";
 import RadarChartPerformance from "../Components/RadarChartPerformance";
+import OneLevelPieChart from "../Components/OneLevelPieChart";
 
 const Dashboard = () => {
 	const { userId } = useParams();
@@ -85,6 +86,7 @@ const Dashboard = () => {
 							<div className="charts">
 								<LineChartSessions dataSessions={dataAverageSessions} />
 								<RadarChartPerformance dataPerformance={dataPerformance} />
+								<OneLevelPieChart dataMainData={dataMainData} />
 							</div>
 							<div className="health-infos"></div>
 						</div>
