@@ -12,7 +12,10 @@ import RadarChartPerformance from "../Components/RadarChartPerformance";
 import OneLevelPieChart from "../Components/OneLevelPieChart";
 
 const Dashboard = () => {
-	const { userId } = useParams();
+	let { userId } = useParams();
+	if (userId === undefined) {
+		userId = 18;
+	}
 	let {
 		mainData,
 		activityData,
@@ -41,10 +44,6 @@ const Dashboard = () => {
 		activityData,
 		mainData
 	);
-	const dataActivity = manageActivity?.manageActivityData();
-	const dataAverageSessions =
-		manageAverageSessions?.manageAverageSessionsData();
-	const dataPerformance = managePerformance?.managePerformanceData();
 	const manageData = new ManageData(
 		averageSessionsData,
 		performanceData,
@@ -52,13 +51,11 @@ const Dashboard = () => {
 		mainData
 	);
 	const dataMainData = manageData?.manageMainData();
-	console.log(
-		dataActivity,
-		dataAverageSessions,
-		dataPerformance,
-		mainData,
-		dataMainData
-	);
+	const dataActivity = manageActivity?.manageActivityData();
+	const dataAverageSessions =
+		manageAverageSessions?.manageAverageSessionsData();
+	const dataPerformance = managePerformance?.managePerformanceData();
+
 	if (error) {
 		return <Error />;
 	} else if (isLoading) {
@@ -81,11 +78,19 @@ const Dashboard = () => {
 						</div>
 						<div className="dashboard-content">
 							<div className="barchart-activity">
-								<BarchartActivity dataActivity={dataActivity} />
+								{dataActivity && (
+									<BarchartActivity dataActivity={dataActivity} />
+								)}
 							</div>
 							<div className="charts">
-								<LineChartSessions dataSessions={dataAverageSessions} />
-								<RadarChartPerformance dataPerformance={dataPerformance} />
+								{dataAverageSessions && (
+									<LineChartSessions dataSessions={dataAverageSessions} />
+								)}
+
+								{dataPerformance && (
+									<RadarChartPerformance dataPerformance={dataPerformance} />
+								)}
+
 								<OneLevelPieChart dataMainData={dataMainData} />
 							</div>
 							<div className="health-infos"></div>

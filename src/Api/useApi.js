@@ -19,10 +19,10 @@ const useApi = (userId) => {
 			])
 			.then(
 				axios.spread((...res) => {
-					setMainData(res[0]?.data.data);
-					setActivityData(res[1]?.data.data);
-					setAverageSessionsData(res[2]?.data.data);
-					setPerformanceData(res[3]?.data.data);
+					setMainData(res[0]?.data?.data);
+					setActivityData(res[1]?.data?.data);
+					setAverageSessionsData(res[2]?.data?.data);
+					setPerformanceData(res[3]?.data?.data);
 					setIsLoading(false);
 				})
 			)

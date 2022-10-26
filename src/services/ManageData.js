@@ -23,7 +23,9 @@ export default class ManageData {
 			const newSessionsAverage = Object.assign(newDays[i], sessions[i]);
 			newSessionsArray.push(newSessionsAverage);
 		}
-		return newSessionsArray;
+		
+			return newSessionsArray
+		
 	}
 
 	managePerformanceData() {
@@ -41,10 +43,11 @@ export default class ManageData {
 		for (let i = 0; i < performance?.length; i++) {
 			const newPerformance = Object.assign(type[i], performance[i]);
 			newPerformanceArray?.push(newPerformance);
-			 newArray = newPerformanceArray?.slice().reverse()
-			 
+			newArray = newPerformanceArray?.slice().reverse();
 		}
-		return newArray;
+		
+			return newArray
+		
 	}
 
 	manageActivityData() {
@@ -56,17 +59,21 @@ export default class ManageData {
 			newActivityArray.push(activityObj);
 		}
 
-		return newActivityArray;
+		
+			return newActivityArray
+		
 	}
 
-	manageMainData(){
-		let newManageDataArray = []
-		const score = (this.mainData?.todayScore || this.mainData?.score) * 100
+	manageMainData() {
+		let newManageDataArray = [];
+		const score = (this.mainData?.todayScore || this.mainData?.score) * 100;
 		console.log(score);
-		const mainDataObj = Object.assign({scorePourcent: score}, this.mainData);
+		const mainDataObj = Object.assign({ scorePourcent: score }, this.mainData);
+
+		newManageDataArray.push(mainDataObj);
 		
-		newManageDataArray.push(mainDataObj)
+			
 		return newManageDataArray
 	}
+	
 }
- 

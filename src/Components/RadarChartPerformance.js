@@ -13,8 +13,8 @@ const RadarChartPerformance = ({dataPerformance}) => {
 	console.log(dataPerformance);
 	return (
 		<div className="radarChart" style={{ width: "33%", height: "100%" }}>
-            <ResponsiveContainer >
-				<RadarChart  cx="50%" cy="50%" outerRadius={70} data={dataPerformance} style={{backgroundColor: "#282D30"}} >
+            <ResponsiveContainer>
+				<RadarChart  cx="50%" cy="50%" outerRadius={100} data={dataPerformance} style={{backgroundColor: "#282D30"}} >
 					<PolarGrid radialLines={false}/>
 					<PolarAngleAxis dataKey="type" tick={{fill: "white", fontSize: "12px"}}  />
 					
