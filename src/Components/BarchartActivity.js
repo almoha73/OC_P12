@@ -26,16 +26,16 @@ const CustomTooltip = ({ active, payload }) => {
 const BarchartActivity = ({ dataActivity }) => {
 	console.log(dataActivity);
 	return (
-		<div className="barchart-activity-chart">
-			<ResponsiveContainer width="100%" aspect={2.3}>
+		<div className="barchart-activity-chart" style={{width: "835px", border: "1px solid red"}}>
+			<ResponsiveContainer  aspect={2.3} >
 				<BarChart
 					width={835}
 					height={320}
 					data={dataActivity}
 					margin={{
 						top: 80,
-						right: 50,
-						left: 45,
+						right: 0,
+						left: 0,
 						bottom: 20,
 					}}
 					barGap={8}
@@ -91,7 +91,8 @@ const BarchartActivity = ({ dataActivity }) => {
 						dataKey="kilogram"
 						name="Poids (kg)"
 						fill="#00000"
-						barSize={7}radius={[5, 5, 0, 0]}
+						barSize={7}
+						radius={[5, 5, 0, 0]}
 
 					/>
 					<Bar

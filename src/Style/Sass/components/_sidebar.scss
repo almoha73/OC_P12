@@ -9,6 +9,11 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
+    @media screen and (max-width: 800px){
+      flex-direction: row;
+      width: 100%;
+      height: 100px;
+    }
     a{
         cursor: pointer;
       &:hover{
@@ -22,5 +27,8 @@
         transform: rotate(-90deg);
         height: auto;
         width: 400px;
+        @media screen and (max-width: 800px){
+          display: none;
+        }
     }
 }

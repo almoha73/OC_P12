@@ -10,6 +10,7 @@ import ManageData from "../services/ManageData";
 import LineChartSessions from "../Components/LineChartSessions";
 import RadarChartPerformance from "../Components/RadarChartPerformance";
 import OneLevelPieChart from "../Components/OneLevelPieChart";
+import Nutriments from "../Components/Nutriments";
 
 const Dashboard = () => {
 	let { userId } = useParams();
@@ -55,7 +56,7 @@ const Dashboard = () => {
 	const dataAverageSessions =
 		manageAverageSessions?.manageAverageSessionsData();
 	const dataPerformance = managePerformance?.managePerformanceData();
-
+	console.log(dataMainData);
 	if (error) {
 		return <Error />;
 	} else if (isLoading) {
@@ -66,34 +67,47 @@ const Dashboard = () => {
 				<Navbar />
 				<main className="container">
 					<Sidebar />
-					<div className="dashboard">
-						<div className="dashboard-title">
-							<h1>
-								Bonjour &nbsp;
-								<span className="dashboard-name">
-									{mainData.userInfos.firstName}
-								</span>
-							</h1>
-							<p>Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
-						</div>
-						<div className="dashboard-content">
-							<div className="barchart-activity">
-								{dataActivity && (
-									<BarchartActivity dataActivity={dataActivity} />
-								)}
+					<div className="health-info">
+						<div className="dashboard">
+							<div className="dashboard-title">
+								<h1>
+									Bonjour &nbsp;
+									<span className="dashboard-name">
+										{mainData.userInfos.firstName}
+									</span>
+								</h1>
+								<p>Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
 							</div>
-							<div className="charts">
-								{dataAverageSessions && (
-									<LineChartSessions dataSessions={dataAverageSessions} />
-								)}
+							<div className="dashboard-graph">
+								<div className="dashboard-content">
+									<div className="barchart-activity">
+										{dataActivity && (
+											<BarchartActivity dataActivity={dataActivity} />
+										)}
+									</div>
+									<div className="charts">
+										{dataAverageSessions && (
+											<LineChartSessions dataSessions={dataAverageSessions} />
+										)}
 
-								{dataPerformance && (
-									<RadarChartPerformance dataPerformance={dataPerformance} />
-								)}
+										{dataPerformance && (
+											<RadarChartPerformance
+												dataPerformance={dataPerformance}
+											/>
+										)}
 
-								<OneLevelPieChart dataMainData={dataMainData} />
+										<OneLevelPieChart dataMainData={dataMainData} />
+									</div>
+								</div>
+								<div className="nutritional-infos">
+									<Nutriments calorie={dataMainData[0]?.keyData.calorieCount} />
+									<Nutriments protein={dataMainData[0]?.keyData.proteinCount} />
+									<Nutriments
+										carbo={dataMainData[0]?.keyData.carbohydrateCount}
+									/>
+									<Nutriments lipid={dataMainData[0]?.keyData.lipidCount} />
+								</div>
 							</div>
-							<div className="health-infos"></div>
 						</div>
 					</div>
 				</main>

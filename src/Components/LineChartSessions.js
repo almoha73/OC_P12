@@ -41,7 +41,7 @@ const CustomTooltipSessions = ({ active, payload }) => {
 
 const LineChartSessions = ({ dataSessions }) => {
 	return (
-		<div style={{ width: "33%", height: 300 }}>
+		<div style={{ minWidth: "258px", height: "263px" }}>
 			<ResponsiveContainer>
 				<LineChart
 					width={300}

@@ -6,20 +6,27 @@ import {
 	PolarAngleAxis,
 	Radar,
 	RadarChart,
-
 } from "recharts";
 
-const RadarChartPerformance = ({dataPerformance}) => {
+const RadarChartPerformance = ({ dataPerformance }) => {
 	console.log(dataPerformance);
 	return (
-		<div className="radarChart" style={{ width: "33%", height: "100%" }}>
-            <ResponsiveContainer>
-				<RadarChart  cx="50%" cy="50%" outerRadius={100} data={dataPerformance} style={{backgroundColor: "#282D30"}} >
-					<PolarGrid radialLines={false}/>
-					<PolarAngleAxis dataKey="type" tick={{fill: "white", fontSize: "12px"}}  />
-					
+		<div className="radarChart" style={{ minWidth: "258px", height: "263px" }}>
+			<ResponsiveContainer>
+				<RadarChart
+					cx="50%"
+					cy="50%"
+					outerRadius={80}
+					data={dataPerformance}
+					style={{ backgroundColor: "#282D30" }}
+				>
+					<PolarGrid radialLines={false} />
+					<PolarAngleAxis
+						dataKey="type"
+						tick={{ fill: "white", fontSize: "12px" }}
+					/>
+
 					<Radar
-                    name='Mike'
 						dataKey="value"
 						stroke="##FF0000"
 						fill="#FF0000"
@@ -27,9 +34,7 @@ const RadarChartPerformance = ({dataPerformance}) => {
 					/>
 				</RadarChart>
 			</ResponsiveContainer>
-        </div>
-			
-		
+		</div>
 	);
 };
 

@@ -53,6 +53,13 @@ nav.navbar-container .navbar ul.navbar-link a.nav-active {
   justify-content: center;
   gap: 10px;
 }
+@media screen and (max-width: 800px) {
+  .sidebar-container {
+    flex-direction: row;
+    width: 100%;
+    height: 100px;
+  }
+}
 .sidebar-container a {
   cursor: pointer;
 }
@@ -65,13 +72,39 @@ nav.navbar-container .navbar ul.navbar-link a.nav-active {
   height: auto;
   width: 400px;
 }
+@media screen and (max-width: 800px) {
+  .sidebar-container .copyright {
+    display: none;
+  }
+}
 
-.activityGraph {
-  height: 320px;
-  background: #FBFBFB;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
-  border-radius: 5px;
-  margin-bottom: 28px;
+.nutritional-infos {
+  height: inherit;
+  min-height: 657px;
+  margin-top: 77px;
+}
+.nutritional-infos .nutriments {
+  width: 258px;
+  height: 124px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 39px;
+}
+.nutritional-infos .nutriments .nutriment-legend {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+.nutritional-infos .nutriments .nutriment-legend span {
+  display: block;
+}
+.nutritional-infos .nutriments .nutriment-legend span:nth-child(1) {
+  font-size: 20px;
+  font-weight: 700;
+}
+.nutritional-infos .nutriments .nutriment-legend span:nth-child(2) {
+  font-size: 14px;
 }
 
 main.home-main {
@@ -85,59 +118,58 @@ main.home-main {
 .container {
   display: flex;
 }
-
-.dashboard {
+@media screen and (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+}
+.container .health-info {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+.container .health-info .dashboard {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 90vh;
+  height: 100vh;
   width: 100%;
 }
-.dashboard .dashboard-title {
+.container .health-info .dashboard .dashboard-title {
   width: 70%;
   margin-top: 68px;
 }
-.dashboard .dashboard-title h1 {
+.container .health-info .dashboard .dashboard-title h1 {
   font-size: 48px;
   align-items: flex-start;
   margin-bottom: 41px;
 }
-.dashboard .dashboard-title h1 .dashboard-name {
+.container .health-info .dashboard .dashboard-title h1 .dashboard-name {
   color: #FF0000;
 }
-.dashboard .dashboard-title p {
+.container .health-info .dashboard .dashboard-title p {
   font-size: 18px;
 }
-.dashboard .dashboard-content {
+.container .health-info .dashboard .dashboard-graph {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  justify-content: space-between;
+  width: 72%;
+}
+.container .health-info .dashboard .dashboard-graph .dashboard-content {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 100%;
   height: auto;
   gap: 30px;
   margin-top: 77px;
 }
-.dashboard .dashboard-content .barchart-activity {
-  width: 100%;
-  height: 100%;
-}
-.dashboard .dashboard-content .barchart-activity .barchart-activity-chart {
-  width: 100%;
-  height: auto;
-  background: #fbfbfb;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
-  border-radius: 5px;
-  margin-bottom: 28px;
-}
-.dashboard .dashboard-content .barchart-activity .barchart-activity-chart .recherts-responsive-container .recharts-wrapper {
-  width: 100% !important;
-}
-.dashboard .dashboard-content .barchart-activity .barchart-activity-chart .recherts-responsive-container .recharts-wrapper .recharts-surface {
-  max-width: 100%;
-}
-.dashboard .dashboard-content .charts {
+.container .health-info .dashboard .dashboard-graph .dashboard-content .charts {
   display: flex;
   flex-direction: row;
-  gap: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .custom-tooltip-barchart {
