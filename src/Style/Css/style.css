@@ -102,8 +102,12 @@ nav.navbar-container .navbar ul.navbar-link a.nav-active {
   display: flex;
   gap: 24px;
   align-items: center;
-  justify-content: center;
+  padding-left: 32px;
   background-color: #FBFBFB;
+}
+.nutritional-infos .nutriments img {
+  width: 60px;
+  height: 60px;
 }
 .nutritional-infos .nutriments .nutriment-legend {
   display: flex;

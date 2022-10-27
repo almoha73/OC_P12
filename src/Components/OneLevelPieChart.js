@@ -3,9 +3,9 @@ import { ResponsiveContainer, Pie, PieChart } from "recharts";
 
 const OneLevelPieChart = ({ dataMainData }) => {
 	return (
-		<div style={{ minWidth: "258px", height: "253px" }}>
+		<div style={{ minWidth: "258px", height: "253px", backgroundColor: "#FBFBFB" }}>
 			<ResponsiveContainer>
-				<PieChart width={50} height={50}>
+				<PieChart width={50} height={50} backgroundColor="white">
 					<text x={20} y={50}>
 						Score
 					</text>

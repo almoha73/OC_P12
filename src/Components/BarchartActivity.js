@@ -34,21 +34,22 @@ const BarchartActivity = ({ dataActivity }) => {
 					data={dataActivity}
 					margin={{
 						top: 80,
-						right: 0,
-						left: 0,
-						bottom: 20,
+						right: 48,
+						left: 48,
+						bottom: 32,
 					}}
 					barGap={8}
-					barCategoryGap={54}
-					barSize={15}
+					
 				>
+					<CartesianGrid vertical={false} strokeDasharray="3 3" />
 					<XAxis
 						tickLine={false}
 						dataKey="dayNum"
-						tick={{ stroke: "#9B9EAC" }}
+						//tick={{ stroke: "9B9EAC" }}
 						dy={10}
+						stroke= "9B9EAC"
 					/>
-					<CartesianGrid vertical="" strokeDasharray="3 3" />
+					
 					<YAxis
 						yAxisId="left"
 						dataKey="calories"
@@ -56,15 +57,20 @@ const BarchartActivity = ({ dataActivity }) => {
 						tick={true}
 						hide
 						tickCount={3}
+						
 					/>
 					<YAxis
 						yAxisId="right"
 						dataKey="kilogram"
 						orientation="right"
-						stroke="#FFFFF"
+						tickLine={false}
+						stroke="FFFFF"
 						domain={["dataMin - 1", "dataMax"]}
 						tickCount={3}
+						tick={{ stroke: "9B9EAC" }}
+						
 					/>
+					
 					<Tooltip content={<CustomTooltip />} />
 
 					<Legend
@@ -93,7 +99,7 @@ const BarchartActivity = ({ dataActivity }) => {
 						fill="#00000"
 						barSize={7}
 						radius={[5, 5, 0, 0]}
-
+						
 					/>
 					<Bar
 						yAxisId="left"
