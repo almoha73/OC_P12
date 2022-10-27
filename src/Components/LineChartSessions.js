@@ -41,19 +41,20 @@ const CustomTooltipSessions = ({ active, payload }) => {
 
 const LineChartSessions = ({ dataSessions }) => {
 	return (
-		<div style={{ minWidth: "258px", height: "263px" }}>
-			<ResponsiveContainer>
+		<div style={{ minWidth: "258px", height: "263px" }} >
+			<ResponsiveContainer >
 				<LineChart
 					width={300}
 					height={300}
 					data={dataSessions}
-					style={{ backgroundColor: "red" }}
+					style={{ backgroundColor: "red", borderRadius: "5px" }}
 					margin={{
 						top: 80,
 						right: 30,
 						left: 20,
 						bottom: 10,
 					}}
+					
 				>
 					
 					<XAxis

@@ -26,7 +26,7 @@ const CustomTooltip = ({ active, payload }) => {
 const BarchartActivity = ({ dataActivity }) => {
 	console.log(dataActivity);
 	return (
-		<div className="barchart-activity-chart" style={{width: "835px", border: "1px solid red"}}>
+		<div className="barchart-activity-chart" style={{maxWidth: "835px", backgroundColor:"#FBFBFB", borderRadius: "5px"}}>
 			<ResponsiveContainer  aspect={2.3} >
 				<BarChart
 					width={835}

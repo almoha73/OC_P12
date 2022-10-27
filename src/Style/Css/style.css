@@ -80,8 +80,21 @@ nav.navbar-container .navbar ul.navbar-link a.nav-active {
 
 .nutritional-infos {
   height: inherit;
-  min-height: 657px;
+  height: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin-top: 77px;
+}
+@media screen and (max-width: 1400px) {
+  .nutritional-infos {
+    width: 100%;
+    height: 124px;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
 }
 .nutritional-infos .nutriments {
   width: 258px;
@@ -89,7 +102,8 @@ nav.navbar-container .navbar ul.navbar-link a.nav-active {
   display: flex;
   gap: 24px;
   align-items: center;
-  margin-bottom: 39px;
+  justify-content: center;
+  background-color: #FBFBFB;
 }
 .nutritional-infos .nutriments .nutriment-legend {
   display: flex;
@@ -154,13 +168,18 @@ main.home-main {
   display: flex;
   align-items: center;
   gap: 50px;
-  justify-content: space-between;
-  width: 72%;
+  justify-content: center;
+  width: 100%;
+}
+@media screen and (max-width: 1400px) {
+  .container .health-info .dashboard .dashboard-graph {
+    flex-direction: column-reverse;
+  }
 }
 .container .health-info .dashboard .dashboard-graph .dashboard-content {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 62%;
   height: auto;
   gap: 30px;
   margin-top: 77px;
@@ -168,8 +187,12 @@ main.home-main {
 .container .health-info .dashboard .dashboard-graph .dashboard-content .charts {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   gap: 20px;
+}
+@media screen and (max-width: 1400px) {
+  .container .health-info .dashboard .dashboard-graph .dashboard-content .charts {
+    flex-wrap: wrap;
+  }
 }
 
 .custom-tooltip-barchart {

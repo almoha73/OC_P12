@@ -1,16 +1,27 @@
 .nutritional-infos{
    height: inherit;
-   min-height: 657px;
+   height: 650px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
    margin-top: 77px;
-   
+   @media screen and (max-width: 1400px){
+    width: 100%;
+    height: 124px;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+   }
     .nutriments{
         width: 258px;
         height: 124px;
         display: flex;
-        gap: 24px;
+         gap: 24px;
         align-items: center;
-        margin-bottom: 39px;
-
+        justify-content: center;
+        //margin-bottom: 39px;
+        background-color: #FBFBFB;
         .nutriment-legend{
             span{
                 display: block;

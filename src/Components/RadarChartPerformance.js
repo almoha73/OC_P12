@@ -18,7 +18,7 @@ const RadarChartPerformance = ({ dataPerformance }) => {
 					cy="50%"
 					outerRadius={80}
 					data={dataPerformance}
-					style={{ backgroundColor: "#282D30" }}
+					style={{ backgroundColor: "#282D30", borderRadius: "5px" }}
 				>
 					<PolarGrid radialLines={false} />
 					<PolarAngleAxis

@@ -29,7 +29,7 @@ const OneLevelPieChart = ({ dataMainData }) => {
 						innerRadius={80}
 						outerRadius={90}
 						fill="#FF0000"
-						
+						cornerRadius={5}
 					></Pie>
 				</PieChart>
 			</ResponsiveContainer>
