@@ -3,8 +3,8 @@ import Navbar from "../Components/Navbar";
 import Sidebar from "../Components/Sidebar";
 import BarchartActivity from "../Components/BarchartActivity";
 import useApi from "../Api/useApi";
-import Loader from "./Loader";
-import Error from "../pages/Error";
+import Loader from "./Loader"
+import Error from "./Error";
 import { useParams } from "react-router-dom";
 import ManageData from "../services/ManageData";
 import LineChartSessions from "../Components/LineChartSessions";
@@ -14,9 +14,7 @@ import Nutriments from "../Components/Nutriments";
 
 const Dashboard = () => {
 	let { userId } = useParams();
-	if (userId === undefined) {
-		userId = 18;
-	}
+	
 	let {
 		mainData,
 		activityData,

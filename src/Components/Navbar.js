@@ -2,7 +2,9 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.svg";
 
+
 const Navbar = () => {
+	let userId = '18'
 	return (
 		<nav className="navbar-container">
 			<div className="navbar">
@@ -18,7 +20,7 @@ const Navbar = () => {
 						<li className="navbar-item">Accueil</li>
 					</NavLink>
 					<NavLink
-						to={`/user/:userId}`}
+						to={`/user/${userId}`}
 						className={({ isActive }) => (isActive ? "nav-active" : "")}
 						end
 					>
