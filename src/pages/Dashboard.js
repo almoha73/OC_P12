@@ -12,7 +12,13 @@ import RadarChartPerformance from "../Components/RadarChartPerformance";
 import OneLevelPieChart from "../Components/OneLevelPieChart";
 import Nutriments from "../Components/Nutriments";
 
+
+/**
+ * Component page that displays all component charts
+ * @component
+ */
 const Dashboard = () => {
+	
 	let { userId } = useParams();
 	
 	let {
@@ -23,38 +29,25 @@ const Dashboard = () => {
 		isLoading,
 		error,
 	} = useApi(userId);
+	console.log(mainData,
+		activityData,
+		averageSessionsData,
+		performanceData,
+		isLoading,
+		error);
+		const userData = new ManageData(averageSessionsData,
+			performanceData,
+			activityData,
+			mainData)
+		console.log(userData);
 
-	const manageActivity = new ManageData(
-		averageSessionsData,
-		performanceData,
-		activityData,
-		mainData
-	);
+		const dataMainData = userData?.manageMainData()
+		const dataActivity = userData?.manageActivityData()
+		const dataAverageSessions = userData?.manageAverageSessionsData()
+		const dataPerformance = userData?.managePerformanceData()
+		console.log(dataMainData, dataActivity, dataAverageSessions, dataPerformance);
+	
 
-	const manageAverageSessions = new ManageData(
-		averageSessionsData,
-		performanceData,
-		activityData,
-		mainData
-	);
-	const managePerformance = new ManageData(
-		averageSessionsData,
-		performanceData,
-		activityData,
-		mainData
-	);
-	const manageData = new ManageData(
-		averageSessionsData,
-		performanceData,
-		activityData,
-		mainData
-	);
-	const dataMainData = manageData?.manageMainData();
-	const dataActivity = manageActivity?.manageActivityData();
-	const dataAverageSessions =
-		manageAverageSessions?.manageAverageSessionsData();
-	const dataPerformance = managePerformance?.managePerformanceData();
-	console.log(dataMainData);
 	if (error) {
 		return <Error />;
 	} else if (isLoading) {

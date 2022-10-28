@@ -11,7 +11,9 @@ import {
 
 const renderLegend = () => {
 	return (
-		<p style={{ width: "120px", color: "white" }}>Durée moyenne des sessions</p>
+		<p style={{ width: "120px", color: "white", opacity: "0.5" }}>
+			Durée moyenne des sessions
+		</p>
 	);
 };
 
@@ -41,29 +43,33 @@ const CustomTooltipSessions = ({ active, payload }) => {
 
 const LineChartSessions = ({ dataSessions }) => {
 	return (
-		<div style={{ minWidth: "258px", height: "263px" }} >
-			<ResponsiveContainer >
+		<div className= "linearChart" style={{ minWidth: "258px", height: "263px" }}>
+			<ResponsiveContainer>
 				<LineChart
 					width={300}
 					height={300}
 					data={dataSessions}
-					style={{ backgroundColor: "red", borderRadius: "5px" }}
 					margin={{
 						top: 80,
 						right: 30,
 						left: 20,
 						bottom: 10,
 					}}
-					
+					style={{background: "#FF0000", borderRadius: "5px" }}
 				>
-					
+					<defs>
+						<linearGradient id="colorUv" x1="0%" y1="0%" x2="100%" y2="0%">
+							<stop offset="0%" stopColor="#FFFFFF" stopOpacity={0.4032} />
+							<stop offset="100%" stopColor="#FFFFFF" stopOpacity={1} />
+						</linearGradient>
+
+					</defs>
 					<XAxis
 						dataKey="dayLetter"
 						dy={10}
 						tickLine={false}
 						axisLine={false}
-						fill="white"
-						tick={{ fill: "white" }}
+						tick={{ fill: "white", opacity: "0.5" }}
 					/>
 					<YAxis
 						dataKey="sessionLength"
@@ -81,7 +87,7 @@ const LineChartSessions = ({ dataSessions }) => {
 						strokeWidth={2}
 						dot={false}
 						activeDot={{ r: 8, stroke: "white" }}
-						stroke="white"
+						stroke="url(#colorUv)"
 					/>
 					<Legend
 						wrapperStyle={{

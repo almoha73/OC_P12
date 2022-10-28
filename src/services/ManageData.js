@@ -1,3 +1,4 @@
+
 export default class ManageData {
 	constructor(averageSessionsData, performanceData, activityData, mainData) {
 		this.averageSessionsData = averageSessionsData;
@@ -6,6 +7,11 @@ export default class ManageData {
 		this.mainData = mainData;
 	}
 	//Functions for creating new tables/objects where new exploitable data are added
+
+	/**
+	 * 
+	 * @returns 
+	 */
 
 	manageAverageSessionsData() {
 		let newSessionsArray = [];
@@ -27,6 +33,7 @@ export default class ManageData {
 			return newSessionsArray
 		
 	}
+
 
 	managePerformanceData() {
 		const newPerformanceArray = [];

@@ -1,6 +1,19 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
+/**
+ *
+ * @param {string} userId userId will be retrieved by useParams in the Dashboard file
+ *
+ * @returns {object} returns an object of objects that are retrieved by the API calls. this object is retrieved in the dashboard file
+ * 		@property {object} mainData
+ * 		@property {object} activityData
+ * 		@property {object} averageSessionsData
+ * 		@property {object} performanceData
+ * 		@property {boolean} isLoading 
+ * 		@property {null|string} error 
+ */
+
 const useApi = (userId) => {
 	const [mainData, setMainData] = useState();
 	const [activityData, setActivityData] = useState();
@@ -34,7 +47,14 @@ const useApi = (userId) => {
 				setIsLoading(false);
 			});
 	}, [userId]);
-
+	console.log({
+		mainData,
+		activityData,
+		averageSessionsData,
+		performanceData,
+		isLoading,
+		error,
+	});
 	return {
 		mainData,
 		activityData,
