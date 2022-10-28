@@ -35,7 +35,7 @@ const OneLevelPieChart = ({ dataMainData }) => {
 					<text x={20} y={50}>
 						Score
 					</text>
-					<text x="40%" y="50%" fontSize="24px" fontWeight={900} zIndex={10}>
+					<text x="40%" y="50%" fontSize="24px" fontWeight={900}>
 						{`${dataMainData[0].scorePourcent} %`}{" "}
 						<tspan x="40%" y="50%" dy={20} fontWeight={500} fontSize="16px">
 							de votre
