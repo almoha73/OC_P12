@@ -23,7 +23,8 @@ const RadarChartPerformance = ({ dataPerformance }) => {
 					<PolarGrid radialLines={false} />
 					<PolarAngleAxis
 						dataKey="type"
-						tick={{ fill: "white", fontSize: "12px" }}
+						tick={{ fill: "white", fontSize: "12px"}}
+						
 					/>
 
 					<Radar
