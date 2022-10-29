@@ -20,8 +20,8 @@ const renderLegend = () => {
 	);
 };
 
-const CustomCursor = ({dots}) => {
-    return <Rectangle fill="#000000" opacity={0.2} x={dots[0].x} width={98} height={300} />;
+const CustomCursor = ({points}) => {
+    return <Rectangle fill="#000000" opacity={0.2} x={points[0].x} width={98} height={300} />;
 };
 
 const CustomTooltipSessions = ({ active, payload }) => {
