@@ -53,11 +53,17 @@ nav.navbar-container .navbar ul.navbar-link a.nav-active {
   justify-content: center;
   gap: 10px;
 }
+@media screen and (max-width: 1400px) {
+  .sidebar-container {
+    height: 160vh;
+  }
+}
 @media screen and (max-width: 800px) {
   .sidebar-container {
     flex-direction: row;
     width: 100%;
-    min-height: 100px;
+    height: 100px;
+    min-height: auto;
     margin-top: 10px;
     background-color: transparent;
     gap: 50px;
@@ -97,15 +103,8 @@ nav.navbar-container .navbar ul.navbar-link a.nav-active {
   background-color: #e60001;
   color: #ffffff;
   font-size: 7px;
-  margin-left: 7px;
+  margin-left: 50px;
   outline-style: none;
-}
-
-@media screen and (max-width: 800px) {
-  div.barchart-activity > div > div > div > svg > g:nth-child(7) > g > g {
-    width: 100% !important;
-    height: 400px !important;
-  }
 }
 
 .nutritional-infos {
@@ -119,7 +118,7 @@ nav.navbar-container .navbar ul.navbar-link a.nav-active {
 @media screen and (max-width: 1400px) {
   .nutritional-infos {
     width: 80%;
-    height: 124px;
+    height: auto;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -167,6 +166,7 @@ main.home-main {
 
 .container {
   display: flex;
+  height: auto;
 }
 @media screen and (max-width: 800px) {
   .container {
@@ -226,7 +226,7 @@ main.home-main {
 }
 @media screen and (max-width: 1300px) {
   .container .health-info .dashboard .dashboard-graph .dashboard-content {
-    width: 80%;
+    width: 85% !important;
   }
 }
 .container .health-info .dashboard .dashboard-graph .dashboard-content .charts {

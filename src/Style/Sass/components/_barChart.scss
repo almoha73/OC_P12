@@ -11,14 +11,9 @@
 	background-color: #e60001;
 	color: #ffffff;
 	font-size: 7px;
-	margin-left: 7px;
+	margin-left: 50px;
 	outline-style: none;
 }
 
-div.barchart-activity > div > div > div > svg > g:nth-child(7) > g > g{
-	@media screen and (max-width: 800px){
-		width: 100%!important;
-		height: 400px!important;
-	}
-}
+
 

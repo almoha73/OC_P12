@@ -2,6 +2,7 @@
 
 .container {
 	display: flex;
+	height: auto;
 	@media screen and (max-width: 800px){
 		flex-direction: column;
 	}
@@ -52,7 +53,9 @@
 					gap: 30px;
 					margin-top: 77px;
 					@media screen and (max-width: 1300px){
-						width: 80%;
+						width: 85%!important;
+						//justify-content: center;
+						//align-items: center;
 					}
 					.charts {
 						display: flex;

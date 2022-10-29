@@ -97,7 +97,7 @@ const BarchartActivity = ({ dataActivity }) => {
 							);
 						}}
 					/>
-					<Tooltip wrapperStyle={{outlineStyle: "none"}} content={<CustomTooltip />} cursor={{fill: "#DFDFDF"}} />
+					<Tooltip wrapperStyle={{outlineStyle: "none"}} content={<CustomTooltip />} cursor={{fill: "#DFDFDF"} } />
 					<Bar
 						yAxisId="right"
 						dataKey="kilogram"
