@@ -8,6 +8,7 @@ import {
 	Tooltip,
 	Legend,
 	ResponsiveContainer,
+	
 } from "recharts";
 
 const CustomTooltip = ({ active, payload }) => {
@@ -23,11 +24,21 @@ const CustomTooltip = ({ active, payload }) => {
 	return null;
 };
 
+
+
+
 const BarchartActivity = ({ dataActivity }) => {
 	console.log(dataActivity);
 	return (
-		<div className="barchart-activity-chart" style={{maxWidth: "835px", backgroundColor:"#FBFBFB", borderRadius: "5px"}}>
-			<ResponsiveContainer  aspect={2.3} >
+		<div
+			className="barchart-activity-chart"
+			style={{
+				maxWidth: "835px",
+				backgroundColor: "#FBFBFB",
+				borderRadius: "5px",
+			}}
+		>
+			<ResponsiveContainer aspect={2.3}>
 				<BarChart
 					width={835}
 					height={320}
@@ -41,15 +52,10 @@ const BarchartActivity = ({ dataActivity }) => {
 					barGap={8}
 					
 				>
-					<CartesianGrid vertical={false} strokeDasharray="3 3" />
-					<XAxis
-						tickLine={false}
-						dataKey="dayNum"
-						//tick={{ stroke: "9B9EAC" }}
-						dy={10}
-						stroke= "9B9EAC"
-					/>
-					
+					<CartesianGrid vertical={false} strokeDasharray="3 3 "/>
+
+					<XAxis tickLine={false} dataKey="dayNum" dy={10} fill="9B9EAC" padding= { {left: -40, right: -40} } />
+
 					<YAxis
 						yAxisId="left"
 						dataKey="calories"
@@ -57,7 +63,6 @@ const BarchartActivity = ({ dataActivity }) => {
 						tick={true}
 						hide
 						tickCount={3}
-						
 					/>
 					<YAxis
 						yAxisId="right"
@@ -68,10 +73,10 @@ const BarchartActivity = ({ dataActivity }) => {
 						domain={["dataMin - 1", "dataMax"]}
 						tickCount={3}
 						tick={{ stroke: "9B9EAC" }}
-						
+						dx={50}
 					/>
-					
-					<Tooltip content={<CustomTooltip />} />
+
+					<Tooltip content={<CustomTooltip />} cursor={{fill: "#DFDFDF"}} />
 
 					<Legend
 						verticalAlign="top"
@@ -99,7 +104,6 @@ const BarchartActivity = ({ dataActivity }) => {
 						fill="#00000"
 						barSize={7}
 						radius={[5, 5, 0, 0]}
-						
 					/>
 					<Bar
 						yAxisId="left"
@@ -108,6 +112,7 @@ const BarchartActivity = ({ dataActivity }) => {
 						fill="#FF0000"
 						barSize={7}
 						radius={[5, 5, 0, 0]}
+						
 					/>
 					<text
 						className="barchart-activity-title"

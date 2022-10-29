@@ -138,20 +138,6 @@ nav.navbar-container .navbar ul.navbar-link a.nav-active {
   font-size: 14px;
 }
 
-.linearChart {
-  position: relative;
-}
-.linearChart:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 66%;
-  right: 0;
-  bottom: 0;
-  background-color: black;
-  opacity: 0.15;
-}
-
 main.home-main {
   width: 100%;
   height: 80vh;

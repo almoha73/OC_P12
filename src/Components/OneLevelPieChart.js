@@ -35,12 +35,12 @@ const OneLevelPieChart = ({ dataMainData }) => {
 					<text x={20} y={50}>
 						Score
 					</text>
-					<text x="40%" y="50%" fontSize="24px" fontWeight={900}>
+					<text x="41%" y="45%" fontSize="24px" fontWeight={900} >
 						{`${dataMainData[0].scorePourcent} %`}{" "}
-						<tspan x="40%" y="50%" dy={20} fontWeight={500} fontSize="16px">
+						<tspan x="36%" y="46%" dy={20} fontWeight={500} fontSize="16px" letterSpacing="0.6">
 							de votre
 						</tspan>
-						<tspan x="40%" y="50%" dy={40} fontSize="16px" fontWeight={500}>
+						<tspan x="38%" y="46%" dy={40} fontSize="16px" fontWeight={500}>
 							objectif
 						</tspan>
 					</text>
