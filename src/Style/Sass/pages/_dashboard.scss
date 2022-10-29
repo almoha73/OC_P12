@@ -15,17 +15,21 @@
 			align-items: center;
 			height: 100vh;
 			width: 100%;
+			
 			.dashboard-title {
 				width: 70%;
 				margin-top: 68px;
-		
+				@media screen and (max-width: 1400px){
+					text-align: center;
+				}
 				& h1 {
 					font-size: 48px;
-					align-items: flex-start;
+					//align-items: flex-start;
 					margin-bottom: 41px;
 					.dashboard-name {
 						color: abstracts.$color-primary;
 					}
+					
 				}
 				& p {
 					font-size: 18px;
@@ -47,7 +51,9 @@
 					height: auto;
 					gap: 30px;
 					margin-top: 77px;
-			
+					@media screen and (max-width: 1300px){
+						width: 80%;
+					}
 					.charts {
 						display: flex;
 						flex-direction: row;

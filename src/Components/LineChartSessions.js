@@ -95,6 +95,7 @@ const LineChartSessions = ({ dataSessions }) => {
 						contentStyle={{ border: "none", width: "39px", height: "25px"  }}
 						content={<CustomTooltipSessions />}
 						cursor={<CustomCursor />}
+						wrapperStyle={{outlineStyle: "none"}}
 					/>
 					<Line
 						type="natural"

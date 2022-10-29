@@ -52,6 +52,7 @@ const BarchartActivity = ({ dataActivity }) => {
 					barGap={8}
 					
 				>
+					
 					<CartesianGrid vertical={false} strokeDasharray="3 3 "/>
 
 					<XAxis tickLine={false} dataKey="dayNum" dy={10} fill="9B9EAC" padding= { {left: -40, right: -40} } />
@@ -76,7 +77,7 @@ const BarchartActivity = ({ dataActivity }) => {
 						dx={50}
 					/>
 
-					<Tooltip content={<CustomTooltip />} cursor={{fill: "#DFDFDF"}} />
+					
 
 					<Legend
 						verticalAlign="top"
@@ -96,7 +97,7 @@ const BarchartActivity = ({ dataActivity }) => {
 							);
 						}}
 					/>
-
+					<Tooltip wrapperStyle={{outlineStyle: "none"}} content={<CustomTooltip />} cursor={{fill: "#DFDFDF"}} />
 					<Bar
 						yAxisId="right"
 						dataKey="kilogram"
