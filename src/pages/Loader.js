@@ -5,13 +5,12 @@ const Loader = () => {
 	return (
 		
 			<div style={{paddingTop: "89.950%", position:"relative", backgroundColor: "black"}}>
-				
 				<iframe
                 title="loader"
 					src={loader}
 					width="100%"
 					height="100%"
-					style={{position:"absolute", top:"40vh", left:"40vw"}}
+					style={{position:"absolute", top:"45vh", left:"45vw"}}
 					frameBorder="0"
 					allowFullScreen
 				></iframe>

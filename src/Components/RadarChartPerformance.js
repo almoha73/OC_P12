@@ -24,7 +24,8 @@ const RadarChartPerformance = ({ dataPerformance }) => {
 					<PolarAngleAxis
 						dataKey="type"
 						tick={{ fill: "white", fontSize: "12px"}}
-						
+						tickSize= {15} // écarte les ticks
+						dy={5}
 					/>
 
 					<Radar
