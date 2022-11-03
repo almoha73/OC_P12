@@ -17,6 +17,8 @@ import Nutriments from "../Components/Nutriments";
  * Component page that displays all component charts
  * @component
  */
+
+
 const Dashboard = () => {
 	/**
 	 * @type {string} userId
@@ -24,10 +26,12 @@ const Dashboard = () => {
 	let { userId } = useParams();
 
 	/**
-	 * @typedef {Object} mainData
-	 * @typedef {Object} activityData
-	 * @typedef {Object} averageSessionsData
-	 * @typedef {Object} performanceData
+	 * @type {Object} mainData
+	 * @type {Object} activityData
+	 * @type {Object} averageSessionsData
+	 * @type {Object} performanceData
+	 * @type {boolean} isLoading
+	 * @type {string} error
 	 */
 	let {
 		mainData,
@@ -37,24 +41,28 @@ const Dashboard = () => {
 		isLoading,
 		error,
 	} = useApi(userId);
-	console.log(mainData,
-		activityData,
-		averageSessionsData,
-		performanceData,
-		isLoading,
-		error);
 
+	/**
+		
+	 * @type {Object} userData
+	 */
 		const userData = new ManageData(averageSessionsData,
 			performanceData,
 			activityData,
 			mainData)
-		console.log(userData);
-
+		
+		/**
+		 * @type {Array<Object>} dataMainData data modified in the ManageData class
+		 * @type {Array<Object>} dataActivity data modified in the ManageData class
+		 * @type {Array<Object>} dataAverageSessionsa data modified in the ManageData class
+		 * @type {Array<Object>} dataPerformance data modified in the ManageData class
+		 * 
+		 */
 		const dataMainData = userData?.manageMainData()
 		const dataActivity = userData?.manageActivityData()
 		const dataAverageSessions = userData?.manageAverageSessionsData()
 		const dataPerformance = userData?.managePerformanceData()
-		console.log(dataMainData, dataActivity, dataAverageSessions, dataPerformance);
+		
 	
 
 	if (error) {

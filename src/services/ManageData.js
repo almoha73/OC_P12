@@ -15,7 +15,7 @@ export default class ManageData {
 	//Functions for creating new tables/objects where new exploitable data are added
 
 	/**
-	 * 
+	 * @property {Function}
 	 * @returns {Object[]} the new object contains in addition the Obj newDays[i] with the usable values
 	 */
 
@@ -47,7 +47,10 @@ export default class ManageData {
 		
 	}
 
-
+   /**
+	* @property {Function}
+	* @returns {Object[]} the new object contains in addition the object with the usable values
+	*/
 	managePerformanceData() {
 		const newPerformanceArray = [];
 		let newArray;
@@ -77,7 +80,11 @@ export default class ManageData {
 			return newArray
 		
 	}
-
+    
+	   /**
+	* @property {Function}
+	* @returns {Object[]} the new object contains in addition the object with the usable values
+	*/
 	manageActivityData() {
 		let newActivityArray = [];
 		/**
@@ -98,7 +105,12 @@ export default class ManageData {
 			return newActivityArray
 		
 	}
+    
 
+	   /**
+	* @property {Function}
+	* @returns {Object[]} the new object contains in addition the object with the usable values
+	*/
 	manageMainData() {
 		let newManageDataArray = [];
 		/**
@@ -110,7 +122,7 @@ export default class ManageData {
 
 		newManageDataArray.push(mainDataObj);
 		
-			console.log(newManageDataArray)
+			
 		/**
 		 * @type {Array<scorePourcent: number, id: number, userInfos: <Object>, score: number, keyData: <Object>} newActivityArray
 		 */
