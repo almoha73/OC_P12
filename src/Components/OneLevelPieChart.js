@@ -1,7 +1,15 @@
 import React from "react";
 import { ResponsiveContainer, Pie, PieChart } from "recharts";
 
+/**
+ * Component that displays the pieChart called in the dashboard page
+ * @component
+ * @param {Array<Object>} dataMainData
+ * 
+ */
+
 const OneLevelPieChart = ({ dataMainData }) => {
+	
 	return (
 		<div style={{ minWidth: "258px", height: "253px", backgroundColor: "#FBFBFB" }}>
 			<ResponsiveContainer>

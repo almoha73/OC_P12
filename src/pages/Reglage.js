@@ -1,6 +1,13 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
 
+
+/**
+ * Component page that displays reglage page
+ * @component
+ */
+
+
 const Reglage = () => {
   return (
     <div>

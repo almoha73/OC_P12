@@ -2,6 +2,10 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.svg";
 
+/**
+ * Component that displays the project navigation bar
+ * @component
+ */
 
 const Navbar = () => {
 	let userId = '18'

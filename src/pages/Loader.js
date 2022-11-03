@@ -1,6 +1,11 @@
 import React from "react";
 import loader from "../assets/loader.gif";
 
+/**
+ * Component page that displays the loader
+ * @component
+ */
+
 const Loader = () => {
 	return (
 		

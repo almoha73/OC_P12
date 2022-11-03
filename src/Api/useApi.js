@@ -47,14 +47,7 @@ const useApi = (userId) => {
 				setIsLoading(false);
 			});
 	}, [userId]);
-	console.log({
-		mainData,
-		activityData,
-		averageSessionsData,
-		performanceData,
-		isLoading,
-		error,
-	});
+	
 	return {
 		mainData,
 		activityData,

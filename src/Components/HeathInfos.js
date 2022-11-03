@@ -1,11 +1,11 @@
-import React from 'react';
+// import React from 'react';
 
-const HeathInfos = () => {
-    return (
-        <div>
-            <h1>HeathInfos</h1>
-        </div>
-    );
-};
+// const HeathInfos = () => {
+//     return (
+//         <div>
+//             <h1>HeathInfos</h1>
+//         </div>
+//     );
+// };
 
-export default HeathInfos;
+// export default HeathInfos;

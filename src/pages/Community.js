@@ -1,6 +1,11 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
 
+/**
+ * Component page that displays community page
+ * @component
+ */
+
 const Community = () => {
   return (
     <div>

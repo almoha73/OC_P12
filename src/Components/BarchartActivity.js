@@ -11,6 +11,12 @@ import {
 	
 } from "recharts";
 
+
+/**
+ * Component that displays th barChart with activities called in the dashboard page
+ * @component
+ */
+
 const CustomTooltip = ({ active, payload }) => {
 	if (active && payload && payload.length) {
 		return (

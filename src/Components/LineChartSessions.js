@@ -12,6 +12,16 @@ import {
 	Rectangle
 } from "recharts";
 
+
+/**
+ * Component that displays the lineChart for the sessions called in the dashboard page
+ * @component
+ */
+
+
+/**
+ * @component to make a custom legend
+ */
 const renderLegend = () => {
 	return (
 		<p style={{ width: "120px", color: "white", opacity: "0.5" }}>
@@ -20,11 +30,23 @@ const renderLegend = () => {
 	);
 };
 
+/**
+ * @component to make a custom cursor
+ * @param {Array} points
+ */
 const CustomCursor = ({points}) => {
+	
     return <Rectangle fill="#000000" opacity={0.2} x={points[0].x} width={98} height={300} />;
 };
 
+/**
+ * @component to display the lineChart with the above modified components
+ * @param {boolean} active
+ * @param {Array} payload
+ */
+
 const CustomTooltipSessions = ({ active, payload }) => {
+	
 	if (active && payload && payload.length) {
 		return (
 			<div
@@ -49,7 +71,13 @@ const CustomTooltipSessions = ({ active, payload }) => {
 	return null;
 };
 
+/**
+ * @components
+ * @param {Array<Object>} dataSession
+ * 
+ */
 const LineChartSessions = ({ dataSessions }) => {
+	console.log(dataSessions);
 	return (
 		<div className="linearChart" style={{ minWidth: "258px", height: "263px" }}>
 			<ResponsiveContainer>
@@ -123,4 +151,4 @@ const LineChartSessions = ({ dataSessions }) => {
 
 export default LineChartSessions;
 
-// background: linear-gradient(270deg, #FFFFFF 1.19%, rgba(255, 255, 255, 0.403191) 81.27%);
+

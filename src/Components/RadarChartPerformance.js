@@ -8,8 +8,15 @@ import {
 	RadarChart,
 } from "recharts";
 
+/**
+ * Component that displays the radarChart called in the dashboard page
+ * @component
+ * @param {Array<Object>} dataPerformance
+ * 
+ */
+
 const RadarChartPerformance = ({ dataPerformance }) => {
-	console.log(dataPerformance);
+	
 	return (
 		<div className="radarChart" style={{ minWidth: "258px", height: "263px" }}>
 			<ResponsiveContainer>

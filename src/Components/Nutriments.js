@@ -4,6 +4,15 @@ import proteinIcon from "../assets/protein-icon.svg";
 import carbsIcon from "../assets/carbs-icon.svg";
 import lipidIcon from "../assets/fat-icon.svg";
 
+/**
+ * Component that displays the nuttriments called in the dashboard page
+ * @component
+ * @param {number} calorie
+ * @param {number} protein
+ * @param {number} carbo
+ * @param {number} lipid
+ */
+
 const Nutriments = ({ calorie, protein, carbo, lipid }) => {
     function pointReplace(decimal) {
         const number = parseFloat(decimal / 1000).toFixed(3)

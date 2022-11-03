@@ -5,6 +5,11 @@ import bike from "../assets/bike.svg";
 import swimming from "../assets/swiming.svg";
 import strengthTraining from "../assets/strengthTraining.svg";
 
+/**
+ * Component that displays the project sidebar 
+ * @component
+ */
+
 const Sidebar = () => {
   return (
     <div className="sidebar-container">
