@@ -7,5 +7,7 @@
 		"path": "../../../P9-front-end-dashboard"
 	}
 ],
-  "settings": {}
+"settings": {
+	"liveServer.settings.multiRootWorkspaceName": "OC_P12"
+}
 }

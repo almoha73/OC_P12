@@ -20,7 +20,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sass": "sass src/Style/Sass/main.scss src/Style/Css/style.css -w"
+    "sass": "sass src/Style/Sass/main.scss src/Style/Css/style.css -w",
+    "jsdoc": "jsdoc -c jsdoc.json"
+
   },
   "eslintConfig": {
     "extends": [

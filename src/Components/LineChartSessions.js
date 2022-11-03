@@ -40,7 +40,7 @@ const CustomCursor = ({points}) => {
 };
 
 /**
- * @component to display the lineChart with the above modified components
+ * @component to make a custom tooltip
  * @param {boolean} active
  * @param {Array} payload
  */
@@ -72,7 +72,7 @@ const CustomTooltipSessions = ({ active, payload }) => {
 };
 
 /**
- * @components
+ * @components to display the lineChart with the above modified components
  * @param {Array<Object>} dataSession
  * 
  */
