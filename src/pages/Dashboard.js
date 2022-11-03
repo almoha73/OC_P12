@@ -18,9 +18,17 @@ import Nutriments from "../Components/Nutriments";
  * @component
  */
 const Dashboard = () => {
-	
+	/**
+	 * @type {string} userId
+	 */
 	let { userId } = useParams();
-	
+
+	/**
+	 * @typedef {Object} mainData
+	 * @typedef {Object} activityData
+	 * @typedef {Object} averageSessionsData
+	 * @typedef {Object} performanceData
+	 */
 	let {
 		mainData,
 		activityData,
@@ -35,6 +43,7 @@ const Dashboard = () => {
 		performanceData,
 		isLoading,
 		error);
+
 		const userData = new ManageData(averageSessionsData,
 			performanceData,
 			activityData,

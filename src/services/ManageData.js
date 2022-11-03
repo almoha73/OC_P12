@@ -1,5 +1,11 @@
 
 export default class ManageData {
+	/**
+	 * @param {Object} averageSessionsData 
+	 * @param {Object} performanceData
+	 * @param {Object} activityData
+	 * @param {Object} mainData 
+	 */
 	constructor(averageSessionsData, performanceData, activityData, mainData) {
 		this.averageSessionsData = averageSessionsData;
 		this.performanceData = performanceData;
@@ -10,12 +16,16 @@ export default class ManageData {
 
 	/**
 	 * 
-	 * @returns 
+	 * @returns {Object[]} the new object contains in addition the Obj newDays[i] with the usable values
 	 */
 
 	manageAverageSessionsData() {
 		let newSessionsArray = [];
+		/**
+		 * @type {Array<day: number, sessionsLength: number>} sessions
+		 */
 		const sessions = this.averageSessionsData?.sessions;
+		
 		const newDays = [
 			{ dayLetter: "L" },
 			{ dayLetter: "M" },
@@ -29,7 +39,10 @@ export default class ManageData {
 			const newSessionsAverage = Object.assign(newDays[i], sessions[i]);
 			newSessionsArray.push(newSessionsAverage);
 		}
-		
+		    
+			/** 
+			 * @type {Array<dayLetter: string, day: number, sessionsLength: number>} newSessionsArray
+			*/
 			return newSessionsArray
 		
 	}
@@ -38,7 +51,12 @@ export default class ManageData {
 	managePerformanceData() {
 		const newPerformanceArray = [];
 		let newArray;
+
+		/**
+		 * @type {Array<value: number, kind: number>} performance
+		 */
 		const performance = this.performanceData?.data;
+		
 		const type = [
 			{ type: "Cardio" },
 			{ type: "Energie" },
@@ -52,6 +70,9 @@ export default class ManageData {
 			newPerformanceArray?.push(newPerformance);
 			newArray = newPerformanceArray?.slice().reverse();
 		}
+		/**
+		 * @type {Array<type: string, value: number, kind: number>} newArray
+		 */
 		
 			return newArray
 		
@@ -59,7 +80,10 @@ export default class ManageData {
 
 	manageActivityData() {
 		let newActivityArray = [];
-		const activity = this.activityData?.sessions;
+		/**
+		 * @type {Array<Object>} activity
+		 */
+		const activity = this.activityData?.sessions
 
 		for (let i = 0; i < activity?.length; i++) {
 			const activityObj = Object.assign(activity[i], { dayNum: i + 1 });
@@ -67,19 +91,29 @@ export default class ManageData {
 		}
 
 		
+		/**
+		 * @type {Array<day: string, kilogram: number, calories: number, dayNum: number>} newActivityArray
+		 */
+		
 			return newActivityArray
 		
 	}
 
 	manageMainData() {
 		let newManageDataArray = [];
+		/**
+		 * @type {number} score
+		 */
 		const score = (this.mainData?.todayScore || this.mainData?.score) * 100;
-		console.log(score);
+		
 		const mainDataObj = Object.assign({ scorePourcent: score }, this.mainData);
 
 		newManageDataArray.push(mainDataObj);
 		
-			
+			console.log(newManageDataArray)
+		/**
+		 * @type {Array<scorePourcent: number, id: number, userInfos: <Object>, score: number, keyData: <Object>} newActivityArray
+		 */
 		return newManageDataArray
 	}
 	
