@@ -8,7 +8,8 @@ import logo from "../assets/logo.svg";
  */
 
 const Navbar = () => {
-	let userId = '18'
+	let userId = "18";
+
 	return (
 		<nav className="navbar-container">
 			<div className="navbar">

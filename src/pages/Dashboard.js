@@ -3,7 +3,8 @@ import Navbar from "../Components/Navbar";
 import Sidebar from "../Components/Sidebar";
 import BarchartActivity from "../Components/BarchartActivity";
 import useApi from "../Api/useApi";
-import Loader from "./Loader"
+//import useMockApi from "../Api/useMockApi";
+import Loader from "./Loader";
 import Error from "./Error";
 import { useParams } from "react-router-dom";
 import ManageData from "../services/ManageData";
@@ -12,12 +13,10 @@ import RadarChartPerformance from "../Components/RadarChartPerformance";
 import OneLevelPieChart from "../Components/OneLevelPieChart";
 import Nutriments from "../Components/Nutriments";
 
-
 /**
  * Component page that displays all component charts
  * @component
  */
-
 
 const Dashboard = () => {
 	/**
@@ -46,24 +45,24 @@ const Dashboard = () => {
 		
 	 * @type {Object} userData
 	 */
-		const userData = new ManageData(averageSessionsData,
-			performanceData,
-			activityData,
-			mainData)
-		
-		/**
-		 * @type {Array<Object>} dataMainData data modified in the ManageData class
-		 * @type {Array<Object>} dataActivity data modified in the ManageData class
-		 * @type {Array<Object>} dataAverageSessionsa data modified in the ManageData class
-		 * @type {Array<Object>} dataPerformance data modified in the ManageData class
-		 * 
-		 */
-		const dataMainData = userData?.manageMainData()
-		const dataActivity = userData?.manageActivityData()
-		const dataAverageSessions = userData?.manageAverageSessionsData()
-		const dataPerformance = userData?.managePerformanceData()
-		
-	
+	const userData = new ManageData(
+		averageSessionsData,
+		performanceData,
+		activityData,
+		mainData
+	);
+
+	/**
+	 * @type {Array<Object>} dataMainData data modified in the ManageData class
+	 * @type {Array<Object>} dataActivity data modified in the ManageData class
+	 * @type {Array<Object>} dataAverageSessionsa data modified in the ManageData class
+	 * @type {Array<Object>} dataPerformance data modified in the ManageData class
+	 *
+	 */
+	const dataMainData = userData?.manageMainData();
+	const dataActivity = userData?.manageActivityData();
+	const dataAverageSessions = userData?.manageAverageSessionsData();
+	const dataPerformance = userData?.managePerformanceData();
 
 	if (error) {
 		return <Error />;
