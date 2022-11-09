@@ -4,7 +4,7 @@
 
 # SportSee, a dashboard of charts made with the Recharts library
 
-## 1. Le projet
+## 1. The project
 This project consists in recovering sports and health data from users, making graphs in order to have an image of it.\
 This project is built with create-react-app.\
 
