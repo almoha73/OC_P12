@@ -8,9 +8,7 @@ import {
 	Tooltip,
 	Legend,
 	ResponsiveContainer,
-	
 } from "recharts";
-
 
 /**
  * Component that displays th barChart with activities called in the dashboard page
@@ -30,11 +28,7 @@ const CustomTooltip = ({ active, payload }) => {
 	return null;
 };
 
-
-
-
 const BarchartActivity = ({ dataActivity }) => {
-	console.log(dataActivity);
 	return (
 		<div
 			className="barchart-activity-chart"
@@ -56,12 +50,16 @@ const BarchartActivity = ({ dataActivity }) => {
 						bottom: 32,
 					}}
 					barGap={8}
-					
 				>
-					
-					<CartesianGrid vertical={false} strokeDasharray="3 3 "/>
+					<CartesianGrid vertical={false} strokeDasharray="3 3 " />
 
-					<XAxis tickLine={false} dataKey="dayNum" dy={10} fill="9B9EAC" padding= { {left: -40, right: -40} } />
+					<XAxis
+						tickLine={false}
+						dataKey="dayNum"
+						dy={10}
+						fill="9B9EAC"
+						padding={{ left: -40, right: -40 }}
+					/>
 
 					<YAxis
 						yAxisId="left"
@@ -83,8 +81,6 @@ const BarchartActivity = ({ dataActivity }) => {
 						dx={50}
 					/>
 
-					
-
 					<Legend
 						verticalAlign="top"
 						align="right"
@@ -103,7 +99,11 @@ const BarchartActivity = ({ dataActivity }) => {
 							);
 						}}
 					/>
-					<Tooltip wrapperStyle={{outlineStyle: "none"}} content={<CustomTooltip />} cursor={{fill: "#DFDFDF"} } />
+					<Tooltip
+						wrapperStyle={{ outlineStyle: "none" }}
+						content={<CustomTooltip />}
+						cursor={{ fill: "#DFDFDF" }}
+					/>
 					<Bar
 						yAxisId="right"
 						dataKey="kilogram"
@@ -119,7 +119,6 @@ const BarchartActivity = ({ dataActivity }) => {
 						fill="#FF0000"
 						barSize={7}
 						radius={[5, 5, 0, 0]}
-						
 					/>
 					<text
 						className="barchart-activity-title"

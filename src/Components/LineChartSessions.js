@@ -9,15 +9,13 @@ import {
 	ResponsiveContainer,
 	Legend,
 	CartesianGrid,
-	Rectangle
+	Rectangle,
 } from "recharts";
-
 
 /**
  * Component that displays the lineChart for the sessions called in the dashboard page
  * @component
  */
-
 
 /**
  * @component to make a custom legend
@@ -34,9 +32,16 @@ const renderLegend = () => {
  * @component to make a custom cursor
  * @param {Array} points
  */
-const CustomCursor = ({points}) => {
-	
-    return <Rectangle fill="#000000" opacity={0.2} x={points[0].x} width={98} height={300} />;
+const CustomCursor = ({ points }) => {
+	return (
+		<Rectangle
+			fill="#000000"
+			opacity={0.2}
+			x={points[0].x}
+			width={98}
+			height={300}
+		/>
+	);
 };
 
 /**
@@ -46,7 +51,6 @@ const CustomCursor = ({points}) => {
  */
 
 const CustomTooltipSessions = ({ active, payload }) => {
-	
 	if (active && payload && payload.length) {
 		return (
 			<div
@@ -59,7 +63,6 @@ const CustomTooltipSessions = ({ active, payload }) => {
 					height: "25px",
 					fontSize: "8px",
 					marginLeft: "7px",
-					
 				}}
 				className="custom-tooltip-sessions"
 			>
@@ -74,10 +77,9 @@ const CustomTooltipSessions = ({ active, payload }) => {
 /**
  * @components to display the lineChart with the above modified components
  * @param {Array<Object>} dataSession
- * 
+ *
  */
 const LineChartSessions = ({ dataSessions }) => {
-	console.log(dataSessions);
 	return (
 		<div className="linearChart" style={{ minWidth: "258px", height: "263px" }}>
 			<ResponsiveContainer>
@@ -93,11 +95,7 @@ const LineChartSessions = ({ dataSessions }) => {
 					}}
 					style={{ background: "#FF0000", borderRadius: "5px" }}
 				>
-					<CartesianGrid
-						vertical={false}
-						horizontal={false}
-						
-					/>
+					<CartesianGrid vertical={false} horizontal={false} />
 					<defs>
 						<linearGradient id="colorUv" x1="0%" y1="0%" x2="100%" y2="0%">
 							<stop offset="0%" stopColor="#FFFFFF" stopOpacity={0.4032} />
@@ -110,20 +108,19 @@ const LineChartSessions = ({ dataSessions }) => {
 						tickLine={false}
 						axisLine={false}
 						tick={{ fill: "white", opacity: "0.5" }}
-						
 					/>
 					<YAxis
 						dataKey="sessionLength"
 						domain={["dataMin - 10", "dataMax"]}
 						hide
 					/>
-					
+
 					<Tooltip
 						labelStyle={{ color: "black", fontSize: 8 }}
-						contentStyle={{ border: "none", width: "39px", height: "25px"  }}
+						contentStyle={{ border: "none", width: "39px", height: "25px" }}
 						content={<CustomTooltipSessions />}
 						cursor={<CustomCursor />}
-						wrapperStyle={{outlineStyle: "none"}}
+						wrapperStyle={{ outlineStyle: "none" }}
 					/>
 					<Line
 						type="natural"
@@ -132,7 +129,6 @@ const LineChartSessions = ({ dataSessions }) => {
 						dot={false}
 						activeDot={{ r: 3, stroke: "white" }}
 						stroke="url(#colorUv)"
-						
 					/>
 					<Legend
 						wrapperStyle={{
@@ -150,5 +146,3 @@ const LineChartSessions = ({ dataSessions }) => {
 };
 
 export default LineChartSessions;
-
-
