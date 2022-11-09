@@ -1,5 +1,4 @@
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
-" />
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
 <img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white" /> 
 <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" /> 
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" /> 
@@ -14,7 +13,25 @@
 
 ## 1. Le projet
 This project consists in recovering sports and health data from users, making graphs in order to have an image of it.\
-This project is built with create-react-app.
+This project is built with create-react-app.\
+
+The deployment of the project works only with mocked data.\
+To switch from backend data to mocked data, go to the `dashbord.js`\
+
+Uncomment the useMockApi import and comment out useApi:\
+`import useApi from "../Api/useApi";`\
+`//import useMockApi from "../Api/useMockApi";`\
+
+In the Dashboard component, replace useApi function by useMockApi.\
+`let {
+		mainData,
+		activityData,
+		averageSessionsData,
+		performanceData,
+		isLoading,
+		error,
+	} = useApi(userId);`
+
 
 
 ## 2 Prerequisites
