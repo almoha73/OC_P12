@@ -1,10 +1,11 @@
-
 export default class ManageData {
 	/**
-	 * @param {Object} averageSessionsData 
-	 * @param {Object} performanceData
-	 * @param {Object} activityData
-	 * @param {Object} mainData 
+	 * created a formatting of the data in order to exploit them
+	 *
+	 * @param {{Object}} averageSessionsData the initial data of the api that contains the sessions table that will be modified
+	 * @param {Object} performanceData the initial data of the api that contains the kind object that will be modified
+	 * @param {Object} activityData the initial data of the api that contains the sessions table that will be modified
+	 * @param {Object} mainData the initial data of the api that contains the keyData table that will be modified
 	 */
 	constructor(averageSessionsData, performanceData, activityData, mainData) {
 		this.averageSessionsData = averageSessionsData;
@@ -25,7 +26,7 @@ export default class ManageData {
 		 * @type {Array<day: number, sessionsLength: number>} sessions
 		 */
 		const sessions = this.averageSessionsData?.sessions;
-		
+
 		const newDays = [
 			{ dayLetter: "L" },
 			{ dayLetter: "M" },
@@ -39,18 +40,17 @@ export default class ManageData {
 			const newSessionsAverage = Object.assign(newDays[i], sessions[i]);
 			newSessionsArray.push(newSessionsAverage);
 		}
-		    
-			/** 
-			 * @type {Array<dayLetter: string, day: number, sessionsLength: number>} newSessionsArray
-			*/
-			return newSessionsArray
-		
+
+		/**
+		 * @type {Array<dayLetter: string, day: number, sessionsLength: number>} newSessionsArray
+		 */
+		return newSessionsArray;
 	}
 
-   /**
-	* @property {Function}
-	* @returns {Object[]} the new object contains in addition the object with the usable values
-	*/
+	/**
+	 * @property {Function}
+	 * @returns {Object[]} the new object contains in addition the object with the usable values
+	 */
 	managePerformanceData() {
 		const newPerformanceArray = [];
 		let newArray;
@@ -59,7 +59,7 @@ export default class ManageData {
 		 * @type {Array<value: number, kind: number>} performance
 		 */
 		const performance = this.performanceData?.data;
-		
+
 		const type = [
 			{ type: "Cardio" },
 			{ type: "Energie" },
@@ -76,57 +76,51 @@ export default class ManageData {
 		/**
 		 * @type {Array<type: string, value: number, kind: number>} newArray
 		 */
-		
-			return newArray
-		
+
+		return newArray;
 	}
-    
-	   /**
-	* @property {Function}
-	* @returns {Object[]} the new object contains in addition the object with the usable values
-	*/
+
+	/**
+	 * @property {Function}
+	 * @returns {Object[]} the new object contains in addition the object with the usable values
+	 */
 	manageActivityData() {
 		let newActivityArray = [];
 		/**
 		 * @type {Array<Object>} activity
 		 */
-		const activity = this.activityData?.sessions
+		const activity = this.activityData?.sessions;
 
 		for (let i = 0; i < activity?.length; i++) {
 			const activityObj = Object.assign(activity[i], { dayNum: i + 1 });
 			newActivityArray.push(activityObj);
 		}
 
-		
 		/**
 		 * @type {Array<day: string, kilogram: number, calories: number, dayNum: number>} newActivityArray
 		 */
-		
-			return newActivityArray
-		
-	}
-    
 
-	   /**
-	* @property {Function}
-	* @returns {Object[]} the new object contains in addition the object with the usable values
-	*/
+		return newActivityArray;
+	}
+
+	/**
+	 * @property {Function}
+	 * @returns {Object[]} the new object contains in addition the object with the usable values
+	 */
 	manageMainData() {
 		let newManageDataArray = [];
 		/**
 		 * @type {number} score
 		 */
 		const score = (this.mainData?.todayScore || this.mainData?.score) * 100;
-		
+
 		const mainDataObj = Object.assign({ scorePourcent: score }, this.mainData);
 
 		newManageDataArray.push(mainDataObj);
-		
-			
+
 		/**
 		 * @type {Array<scorePourcent: number, id: number, userInfos: <Object>, score: number, keyData: <Object>} newActivityArray
 		 */
-		return newManageDataArray
+		return newManageDataArray;
 	}
-	
 }

@@ -6,12 +6,12 @@ import { useState, useEffect } from "react";
  * @param {string} userId userId will be retrieved by useParams in the Dashboard file
  *
  * @returns {object} returns an object of objects that are retrieved by the API calls. this object is retrieved in the dashboard file
- * 		@property {object} mainData
- * 		@property {object} activityData
- * 		@property {object} averageSessionsData
- * 		@property {object} performanceData
- * 		@property {boolean} isLoading 
- * 		@property {null|string} error 
+ * 		@property {object} mainData general user data
+ * 		@property {object} activityData activity data
+ * 		@property {object} averageSessionsData session data
+ * 		@property {object} performanceData performance data
+ * 		@property {boolean} isLoading
+ * 		@property {null|string} error
  */
 
 const useApi = (userId) => {
@@ -47,7 +47,7 @@ const useApi = (userId) => {
 				setIsLoading(false);
 			});
 	}, [userId]);
-	
+
 	return {
 		mainData,
 		activityData,

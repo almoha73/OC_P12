@@ -26,13 +26,14 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>
-export default class ManageData {
+            <pre class="prettyprint source linenums"><code>export default class ManageData {
 	/**
-	 * @param {Object} averageSessionsData 
-	 * @param {Object} performanceData
-	 * @param {Object} activityData
-	 * @param {Object} mainData 
+	 * created a formatting of the data in order to exploit them
+	 *
+	 * @param {{Object}} averageSessionsData the initial data of the api that contains the sessions table that will be modified
+	 * @param {Object} performanceData the initial data of the api that contains the kind object that will be modified
+	 * @param {Object} activityData the initial data of the api that contains the sessions table that will be modified
+	 * @param {Object} mainData the initial data of the api that contains the keyData table that will be modified
 	 */
 	constructor(averageSessionsData, performanceData, activityData, mainData) {
 		this.averageSessionsData = averageSessionsData;
@@ -53,7 +54,7 @@ export default class ManageData {
 		 * @type {Array&lt;day: number, sessionsLength: number>} sessions
 		 */
 		const sessions = this.averageSessionsData?.sessions;
-		
+
 		const newDays = [
 			{ dayLetter: "L" },
 			{ dayLetter: "M" },
@@ -67,18 +68,17 @@ export default class ManageData {
 			const newSessionsAverage = Object.assign(newDays[i], sessions[i]);
 			newSessionsArray.push(newSessionsAverage);
 		}
-		    
-			/** 
-			 * @type {Array&lt;dayLetter: string, day: number, sessionsLength: number>} newSessionsArray
-			*/
-			return newSessionsArray
-		
+
+		/**
+		 * @type {Array&lt;dayLetter: string, day: number, sessionsLength: number>} newSessionsArray
+		 */
+		return newSessionsArray;
 	}
 
-   /**
-	* @property {Function}
-	* @returns {Object[]} the new object contains in addition the object with the usable values
-	*/
+	/**
+	 * @property {Function}
+	 * @returns {Object[]} the new object contains in addition the object with the usable values
+	 */
 	managePerformanceData() {
 		const newPerformanceArray = [];
 		let newArray;
@@ -87,7 +87,7 @@ export default class ManageData {
 		 * @type {Array&lt;value: number, kind: number>} performance
 		 */
 		const performance = this.performanceData?.data;
-		
+
 		const type = [
 			{ type: "Cardio" },
 			{ type: "Energie" },
@@ -104,59 +104,53 @@ export default class ManageData {
 		/**
 		 * @type {Array&lt;type: string, value: number, kind: number>} newArray
 		 */
-		
-			return newArray
-		
+
+		return newArray;
 	}
-    
-	   /**
-	* @property {Function}
-	* @returns {Object[]} the new object contains in addition the object with the usable values
-	*/
+
+	/**
+	 * @property {Function}
+	 * @returns {Object[]} the new object contains in addition the object with the usable values
+	 */
 	manageActivityData() {
 		let newActivityArray = [];
 		/**
 		 * @type {Array&lt;Object>} activity
 		 */
-		const activity = this.activityData?.sessions
+		const activity = this.activityData?.sessions;
 
 		for (let i = 0; i &lt; activity?.length; i++) {
 			const activityObj = Object.assign(activity[i], { dayNum: i + 1 });
 			newActivityArray.push(activityObj);
 		}
 
-		
 		/**
 		 * @type {Array&lt;day: string, kilogram: number, calories: number, dayNum: number>} newActivityArray
 		 */
-		
-			return newActivityArray
-		
-	}
-    
 
-	   /**
-	* @property {Function}
-	* @returns {Object[]} the new object contains in addition the object with the usable values
-	*/
+		return newActivityArray;
+	}
+
+	/**
+	 * @property {Function}
+	 * @returns {Object[]} the new object contains in addition the object with the usable values
+	 */
 	manageMainData() {
 		let newManageDataArray = [];
 		/**
 		 * @type {number} score
 		 */
 		const score = (this.mainData?.todayScore || this.mainData?.score) * 100;
-		
+
 		const mainDataObj = Object.assign({ scorePourcent: score }, this.mainData);
 
 		newManageDataArray.push(mainDataObj);
-		
-			
+
 		/**
 		 * @type {Array&lt;scorePourcent: number, id: number, userInfos: &lt;Object>, score: number, keyData: &lt;Object>} newActivityArray
 		 */
-		return newManageDataArray
+		return newManageDataArray;
 	}
-	
 }
 </code></pre>
         </article>
@@ -168,13 +162,13 @@ export default class ManageData {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module.exports_module.exports.html">exports</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Community">Community</a></li><li><a href="global.html#CustomCursor">CustomCursor</a></li><li><a href="global.html#CustomTooltip">CustomTooltip</a></li><li><a href="global.html#CustomTooltipSessions">CustomTooltipSessions</a></li><li><a href="global.html#Dashboard">Dashboard</a></li><li><a href="global.html#data">data</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#LineChartSessions">LineChartSessions</a></li><li><a href="global.html#Loader">Loader</a></li><li><a href="global.html#manageActivityData">manageActivityData</a></li><li><a href="global.html#manageAverageSessionsData">manageAverageSessionsData</a></li><li><a href="global.html#manageMainData">manageMainData</a></li><li><a href="global.html#managePerformanceData">managePerformanceData</a></li><li><a href="global.html#Navbar">Navbar</a></li><li><a href="global.html#Nutriments">Nutriments</a></li><li><a href="global.html#OneLevelPieChart">OneLevelPieChart</a></li><li><a href="global.html#RadarChartPerformance">RadarChartPerformance</a></li><li><a href="global.html#Reglage">Reglage</a></li><li><a href="global.html#renderLegend">renderLegend</a></li><li><a href="global.html#Sidebar">Sidebar</a></li><li><a href="global.html#useApi">useApi</a></li><li><a href="global.html#useApiMock">useApiMock</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module.exports_module.exports.html">exports</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Community">Community</a></li><li><a href="global.html#CustomCursor">CustomCursor</a></li><li><a href="global.html#CustomTooltip">CustomTooltip</a></li><li><a href="global.html#CustomTooltipSessions">CustomTooltipSessions</a></li><li><a href="global.html#Dashboard">Dashboard</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#LineChartSessions">LineChartSessions</a></li><li><a href="global.html#Loader">Loader</a></li><li><a href="global.html#Navbar">Navbar</a></li><li><a href="global.html#Nutriments">Nutriments</a></li><li><a href="global.html#OneLevelPieChart">OneLevelPieChart</a></li><li><a href="global.html#RadarChartPerformance">RadarChartPerformance</a></li><li><a href="global.html#Reglage">Reglage</a></li><li><a href="global.html#Sidebar">Sidebar</a></li><li><a href="global.html#data">data</a></li><li><a href="global.html#manageActivityData">manageActivityData</a></li><li><a href="global.html#manageAverageSessionsData">manageAverageSessionsData</a></li><li><a href="global.html#manageMainData">manageMainData</a></li><li><a href="global.html#managePerformanceData">managePerformanceData</a></li><li><a href="global.html#renderLegend">renderLegend</a></li><li><a href="global.html#useApi">useApi</a></li><li><a href="global.html#useApiMock">useApiMock</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Thu Nov 03 2022 18:35:06 GMT+0100 (heure normale d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Wed Nov 09 2022 07:59:12 GMT+0100 (GMT+01:00)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -31,7 +31,8 @@ import Navbar from "../Components/Navbar";
 import Sidebar from "../Components/Sidebar";
 import BarchartActivity from "../Components/BarchartActivity";
 import useApi from "../Api/useApi";
-import Loader from "./Loader"
+//import useMockApi from "../Api/useMockApi";
+import Loader from "./Loader";
 import Error from "./Error";
 import { useParams } from "react-router-dom";
 import ManageData from "../services/ManageData";
@@ -40,12 +41,10 @@ import RadarChartPerformance from "../Components/RadarChartPerformance";
 import OneLevelPieChart from "../Components/OneLevelPieChart";
 import Nutriments from "../Components/Nutriments";
 
-
 /**
  * Component page that displays all component charts
  * @component
  */
-
 
 const Dashboard = () => {
 	/**
@@ -74,24 +73,24 @@ const Dashboard = () => {
 		
 	 * @type {Object} userData
 	 */
-		const userData = new ManageData(averageSessionsData,
-			performanceData,
-			activityData,
-			mainData)
-		
-		/**
-		 * @type {Array&lt;Object>} dataMainData data modified in the ManageData class
-		 * @type {Array&lt;Object>} dataActivity data modified in the ManageData class
-		 * @type {Array&lt;Object>} dataAverageSessionsa data modified in the ManageData class
-		 * @type {Array&lt;Object>} dataPerformance data modified in the ManageData class
-		 * 
-		 */
-		const dataMainData = userData?.manageMainData()
-		const dataActivity = userData?.manageActivityData()
-		const dataAverageSessions = userData?.manageAverageSessionsData()
-		const dataPerformance = userData?.managePerformanceData()
-		
-	
+	const userData = new ManageData(
+		averageSessionsData,
+		performanceData,
+		activityData,
+		mainData
+	);
+
+	/**
+	 * @type {Array&lt;Object>} dataMainData data modified in the ManageData class
+	 * @type {Array&lt;Object>} dataActivity data modified in the ManageData class
+	 * @type {Array&lt;Object>} dataAverageSessionsa data modified in the ManageData class
+	 * @type {Array&lt;Object>} dataPerformance data modified in the ManageData class
+	 *
+	 */
+	const dataMainData = userData?.manageMainData();
+	const dataActivity = userData?.manageActivityData();
+	const dataAverageSessions = userData?.manageAverageSessionsData();
+	const dataPerformance = userData?.managePerformanceData();
 
 	if (error) {
 		return &lt;Error />;
@@ -162,13 +161,13 @@ export default Dashboard;
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module.exports_module.exports.html">exports</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Community">Community</a></li><li><a href="global.html#CustomCursor">CustomCursor</a></li><li><a href="global.html#CustomTooltip">CustomTooltip</a></li><li><a href="global.html#CustomTooltipSessions">CustomTooltipSessions</a></li><li><a href="global.html#Dashboard">Dashboard</a></li><li><a href="global.html#data">data</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#LineChartSessions">LineChartSessions</a></li><li><a href="global.html#Loader">Loader</a></li><li><a href="global.html#manageActivityData">manageActivityData</a></li><li><a href="global.html#manageAverageSessionsData">manageAverageSessionsData</a></li><li><a href="global.html#manageMainData">manageMainData</a></li><li><a href="global.html#managePerformanceData">managePerformanceData</a></li><li><a href="global.html#Navbar">Navbar</a></li><li><a href="global.html#Nutriments">Nutriments</a></li><li><a href="global.html#OneLevelPieChart">OneLevelPieChart</a></li><li><a href="global.html#RadarChartPerformance">RadarChartPerformance</a></li><li><a href="global.html#Reglage">Reglage</a></li><li><a href="global.html#renderLegend">renderLegend</a></li><li><a href="global.html#Sidebar">Sidebar</a></li><li><a href="global.html#useApi">useApi</a></li><li><a href="global.html#useApiMock">useApiMock</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module.exports_module.exports.html">exports</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Community">Community</a></li><li><a href="global.html#CustomCursor">CustomCursor</a></li><li><a href="global.html#CustomTooltip">CustomTooltip</a></li><li><a href="global.html#CustomTooltipSessions">CustomTooltipSessions</a></li><li><a href="global.html#Dashboard">Dashboard</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#LineChartSessions">LineChartSessions</a></li><li><a href="global.html#Loader">Loader</a></li><li><a href="global.html#Navbar">Navbar</a></li><li><a href="global.html#Nutriments">Nutriments</a></li><li><a href="global.html#OneLevelPieChart">OneLevelPieChart</a></li><li><a href="global.html#RadarChartPerformance">RadarChartPerformance</a></li><li><a href="global.html#Reglage">Reglage</a></li><li><a href="global.html#Sidebar">Sidebar</a></li><li><a href="global.html#data">data</a></li><li><a href="global.html#manageActivityData">manageActivityData</a></li><li><a href="global.html#manageAverageSessionsData">manageAverageSessionsData</a></li><li><a href="global.html#manageMainData">manageMainData</a></li><li><a href="global.html#managePerformanceData">managePerformanceData</a></li><li><a href="global.html#renderLegend">renderLegend</a></li><li><a href="global.html#useApi">useApi</a></li><li><a href="global.html#useApiMock">useApiMock</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Thu Nov 03 2022 18:35:06 GMT+0100 (heure normale d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Wed Nov 09 2022 07:59:12 GMT+0100 (GMT+01:00)
 </footer>
 
 <script> prettyPrint(); </script>
