@@ -25,7 +25,7 @@ const Sidebar = () => {
       <NavLink to="#">
         <img src={strengthTraining} alt="" />
       </NavLink>
-      <div className="copyright">Copyright, SportSee 2020</div>
+      <p className="copyright">Copyright, SportSee 2020</p>
     </div>
   );
 };
