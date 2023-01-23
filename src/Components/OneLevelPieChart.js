@@ -5,17 +5,16 @@ import { ResponsiveContainer, Pie, PieChart } from "recharts";
  * Component that displays the pieChart called in the dashboard page
  * @component
  * @param {Array<Object>} dataMainData
- * 
+ *
  */
 
 const OneLevelPieChart = ({ dataMainData }) => {
-	
 	return (
-		<div style={{ minWidth: "258px", height: "253px", backgroundColor: "#FBFBFB" }}>
+		<div
+			style={{ minWidth: "258px", height: "253px", backgroundColor: "#FBFBFB" }}
+		>
 			<ResponsiveContainer>
 				<PieChart width={50} height={50} backgroundColor="white">
-					
-
 					<Pie
 						data={dataMainData}
 						dataKey="scorePourcent"
@@ -38,14 +37,20 @@ const OneLevelPieChart = ({ dataMainData }) => {
 						innerRadius={0}
 						outerRadius={80}
 						fill="white"
-						
 					></Pie>
 					<text x={20} y={50}>
 						Score
 					</text>
-					<text x="41%" y="45%" fontSize="24px" fontWeight={900} >
+					<text x="41%" y="45%" fontSize="24px" fontWeight={900}>
 						{`${dataMainData[0].scorePourcent} %`}{" "}
-						<tspan x="36%" y="46%" dy={20} fontWeight={500} fontSize="16px" letterSpacing="0.6">
+						<tspan
+							x="36%"
+							y="46%"
+							dy={20}
+							fontWeight={500}
+							fontSize="16px"
+							letterSpacing="0.6"
+						>
 							de votre
 						</tspan>
 						<tspan x="38%" y="46%" dy={40} fontSize="16px" fontWeight={500}>

@@ -12,11 +12,10 @@ import {
  * Component that displays the radarChart called in the dashboard page
  * @component
  * @param {Array<Object>} dataPerformance
- * 
+ *
  */
 
 const RadarChartPerformance = ({ dataPerformance }) => {
-	
 	return (
 		<div className="radarChart" style={{ minWidth: "258px", height: "263px" }}>
 			<ResponsiveContainer>
@@ -27,11 +26,11 @@ const RadarChartPerformance = ({ dataPerformance }) => {
 					data={dataPerformance}
 					style={{ backgroundColor: "#282D30", borderRadius: "5px" }}
 				>
-					<PolarGrid radialLines={false}/>
+					<PolarGrid radialLines={false} />
 					<PolarAngleAxis
 						dataKey="type"
-						tick={{ fill: "white", fontSize: "12px"}}
-						tickSize= {15} // écarte les ticks
+						tick={{ fill: "white", fontSize: "12px" }}
+						tickSize={15} // écarte les ticks
 						dy={5}
 					/>
 

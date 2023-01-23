@@ -14,15 +14,14 @@ import lipidIcon from "../assets/fat-icon.svg";
  */
 
 const Nutriments = ({ calorie, protein, carbo, lipid }) => {
-    function pointReplace(decimal) {
-        const number = parseFloat(decimal / 1000).toFixed(3)
-        return number
-    }
-    const numb = pointReplace(calorie)
-    const coma = numb.replace(".", ",")
+	function pointReplace(decimal) {
+		const number = parseFloat(decimal / 1000).toFixed(3);
+		return number;
+	}
+	const numb = pointReplace(calorie);
+	const coma = numb.replace(".", ",");
 
 	return (
-
 		<>
 			{calorie && (
 				<div className="nutriments">

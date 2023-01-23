@@ -33,6 +33,7 @@ const renderLegend = () => {
  * @param {Array} points
  */
 const CustomCursor = ({ points }) => {
+	console.log(points);
 	return (
 		<Rectangle
 			fill="#000000"
@@ -80,6 +81,7 @@ const CustomTooltipSessions = ({ active, payload }) => {
  *
  */
 const LineChartSessions = ({ dataSessions }) => {
+
 	return (
 		<div className="linearChart" style={{ minWidth: "258px", height: "263px" }}>
 			<ResponsiveContainer>

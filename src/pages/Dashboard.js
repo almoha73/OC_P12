@@ -2,8 +2,8 @@ import React from "react";
 import Navbar from "../Components/Navbar";
 import Sidebar from "../Components/Sidebar";
 import BarchartActivity from "../Components/BarchartActivity";
-import useApi from "../Api/useApi";
-//import useMockApi from "../Api/useMockApi";
+//import useApi from "../Api/useApi";
+import useMockApi from "../Api/useMockApi";
 import Loader from "./Loader";
 import Error from "./Error";
 import { useParams } from "react-router-dom";
@@ -39,7 +39,7 @@ const Dashboard = () => {
 		performanceData,
 		isLoading,
 		error,
-	} = useApi(userId);
+	} = useMockApi(userId);
 
 	/**
 		
