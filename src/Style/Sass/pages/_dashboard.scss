@@ -44,6 +44,7 @@
 				gap: 50px;
 				justify-content: center;
 				width: 100%;
+				margin-bottom: 100px;
 				@media screen and (max-width: 1400px) {
 					flex-direction: column-reverse;
 				}
@@ -56,19 +57,29 @@
 					margin-top: 77px;
 					@media screen and (max-width: 1300px) {
 						width: 85% !important;
-						//justify-content: center;
-						//align-items: center;
+						
 					}
 					.charts {
 						display: flex;
 						flex-direction: row;
-
+						justify-content: space-between;
 						gap: 20px;
+						max-width: 825px;
 
-						@media screen and (max-width: 1100px) {
+						flex-wrap: wrap;
+						
+						@media screen and (max-width: 1400px) {
 							flex-wrap: wrap;
 							justify-content: center;
 							align-items: center;
+					
+						}
+						@media screen and (max-width: 1024px) {
+							flex-wrap: wrap;
+							justify-content: center;
+							align-items: center;
+							gap: 30px;
+							width: 870px;
 						}
 					}
 				}

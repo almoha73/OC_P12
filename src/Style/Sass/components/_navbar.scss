@@ -13,16 +13,27 @@ nav.navbar-container {
 		align-items: center;
 		justify-content: space-between;
 		width: 95%;
+		@media screen and (max-width: 1024px) {
+			width: 85% !important;
+			
+		}
 		ul.navbar-link {
 			display: flex;
 			width: 80%;
 			justify-content: space-around;
 			list-style-type: none;
+			@media screen and (max-width: 1300px) {
+				justify-content: flex-end;
+				gap: 50px;
+			}
 			a {
 				text-decoration: none;
 				color: abstracts.$color-tertiary;
 				li.navbar-item {
 					font-size: 24px;
+					@media screen and (max-width: 1300px) {
+						font-size: 16px;
+					}
 					&:hover {
 						color: abstracts.$color-primary;
 					}

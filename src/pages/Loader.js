@@ -9,13 +9,13 @@ import loader from "../assets/loader.gif";
 const Loader = () => {
 	return (
 		
-			<div style={{paddingTop: "89.950%", position:"relative", backgroundColor: "black"}}>
+			<div style={{width: "100%", height: "100vh", position:"relative", backgroundColor: "black"}}>
 				<iframe
                 title="loader"
 					src={loader}
 					width="100%"
 					height="100%"
-					style={{position:"absolute", top:"45vh", left:"45vw"}}
+					style={{position:"absolute", top:"45%", left:"40%"}}
 					frameBorder="0"
 					allowFullScreen
 				></iframe>

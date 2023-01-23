@@ -33,7 +33,6 @@ const BarchartActivity = ({ dataActivity }) => {
 		<div
 			className="barchart-activity-chart"
 			style={{
-				maxWidth: "835px",
 				backgroundColor: "#FBFBFB",
 				borderRadius: "5px",
 			}}

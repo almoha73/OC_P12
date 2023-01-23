@@ -24,11 +24,22 @@ nav.navbar-container .navbar {
   justify-content: space-between;
   width: 95%;
 }
+@media screen and (max-width: 1024px) {
+  nav.navbar-container .navbar {
+    width: 85% !important;
+  }
+}
 nav.navbar-container .navbar ul.navbar-link {
   display: flex;
   width: 80%;
   justify-content: space-around;
   list-style-type: none;
+}
+@media screen and (max-width: 1300px) {
+  nav.navbar-container .navbar ul.navbar-link {
+    justify-content: flex-end;
+    gap: 50px;
+  }
 }
 nav.navbar-container .navbar ul.navbar-link a {
   text-decoration: none;
@@ -36,6 +47,11 @@ nav.navbar-container .navbar ul.navbar-link a {
 }
 nav.navbar-container .navbar ul.navbar-link a li.navbar-item {
   font-size: 24px;
+}
+@media screen and (max-width: 1300px) {
+  nav.navbar-container .navbar ul.navbar-link a li.navbar-item {
+    font-size: 16px;
+  }
 }
 nav.navbar-container .navbar ul.navbar-link a li.navbar-item:hover {
   color: #FF0000;
@@ -103,6 +119,20 @@ nav.navbar-container .navbar ul.navbar-link a.nav-active {
   font-size: 7px;
   margin-left: 50px;
   outline-style: none;
+}
+
+.bachart-activity {
+  width: 835px;
+}
+@media screen and (max-width: 1400px) {
+  .bachart-activity {
+    width: 889px !important;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .bachart-activity {
+    width: 865px !important;
+  }
 }
 
 .nutritional-infos {
@@ -218,6 +248,7 @@ main.home-main {
   gap: 50px;
   justify-content: center;
   width: 100%;
+  margin-bottom: 100px;
 }
 @media screen and (max-width: 1400px) {
   .container .health-info .dashboard .dashboard-graph {
@@ -240,13 +271,25 @@ main.home-main {
 .container .health-info .dashboard .dashboard-graph .dashboard-content .charts {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   gap: 20px;
+  max-width: 825px;
+  flex-wrap: wrap;
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1400px) {
   .container .health-info .dashboard .dashboard-graph .dashboard-content .charts {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .container .health-info .dashboard .dashboard-graph .dashboard-content .charts {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 870px;
   }
 }
 

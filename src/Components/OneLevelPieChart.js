@@ -11,7 +11,12 @@ import { ResponsiveContainer, Pie, PieChart } from "recharts";
 const OneLevelPieChart = ({ dataMainData }) => {
 	return (
 		<div
-			style={{ minWidth: "258px", height: "253px", backgroundColor: "#FBFBFB" }}
+			style={{
+				minWidth: "258px",
+				height: "263px",
+				backgroundColor: "#FBFBFB",
+				borderRadius: "5px",
+			}}
 		>
 			<ResponsiveContainer>
 				<PieChart width={50} height={50} backgroundColor="white">
